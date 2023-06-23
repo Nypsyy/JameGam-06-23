@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - SurfaceGround
   - SpriteMC
+  - Flare
   layers:
   - Default
   - TransparentFX
