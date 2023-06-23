@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Bounciness : MonoBehaviour
+public class FlareCollision : MonoBehaviour
 {
     private CapsuleCollider2D capsuleCollider;
     private GameObject ground;
@@ -16,25 +16,27 @@ public class Bounciness : MonoBehaviour
     void Start()
     {
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        var material = new PhysicsMaterial2D();
-        material.bounciness = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(capsuleCollider.sharedMaterial.bounciness);
-        if (hitGround == true)
-        {
-            capsuleCollider.sharedMaterial = inert;
-        }
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            hitGround = true;
+            capsuleCollider.sharedMaterial = inert;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+         
+        }
+    }
+
 }
