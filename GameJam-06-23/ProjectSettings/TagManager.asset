@@ -3,11 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - Obstacle
-  - SurfaceGround
-  - SpriteMC
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -15,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - surfaceGround
+  - 
   - 
   - 
   - 
@@ -42,9 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 947207447
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
