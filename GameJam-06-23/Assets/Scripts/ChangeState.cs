@@ -24,6 +24,8 @@ public class ChangeState : MonoBehaviour
 
     public void AlertObservers(string message)
     {
+
+        
             if(i<3){
                 i++;
             }
