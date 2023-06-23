@@ -20,15 +20,22 @@ public class test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space)){
+        if (Input.GetKeyUp(KeyCode.Keypad0)){
             MC.GetComponent<Animator>().Play("jump1");
         }
-        else if(Input.GetKeyUp(KeyCode.Q)){
+        else if(Input.GetKeyUp(KeyCode.Keypad1)){
             MC.GetComponent<Animator>().Play("throw1");
         }
-        else if(Input.GetKeyUp(KeyCode.D)){
+        else if(Input.GetKeyUp(KeyCode.Keypad2)){
             MC.GetComponent<Animator>().Play("fall1");
         }
+        else if(Input.GetKeyUp(KeyCode.Keypad3)){
+            MC.GetComponent<Animator>().Play("walk1");
+        }
+        else if(Input.GetKeyUp(KeyCode.Keypad4)){
+            MC.GetComponent<Animator>().Play("explode");
+        }
+        
     }
 
 

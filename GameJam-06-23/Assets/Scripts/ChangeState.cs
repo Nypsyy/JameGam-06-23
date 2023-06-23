@@ -2,13 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
-using UnityEngine.Rendering.Universal;
 
 public class ChangeState : MonoBehaviour
 {
-
-    public Light2D Light2D;
-    public SpriteLibrary SpriteLibrary;
 
     [SerializeField]
     private SpriteLibraryAsset[] states;
@@ -25,12 +21,14 @@ public class ChangeState : MonoBehaviour
         
     }
 
+
     public void AlertObservers(string message)
     {
+
+        
             if(i<3){
                 i++;
             }
-            SpriteLibrary.spriteLibraryAsset = states[i];
-            Light2D.intensity-=0.5f;
+            gameObject.GetComponent<SpriteLibrary>().spriteLibraryAsset = states[i];
     }
 }
