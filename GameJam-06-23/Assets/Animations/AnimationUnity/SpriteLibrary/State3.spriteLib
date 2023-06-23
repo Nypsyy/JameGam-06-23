@@ -157,6 +157,68 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: 21300000, guid: ebd3addb2417d2342a55b40dec1a150b, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 7
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Bobeans1
+      m_Hash: 865414362
+      m_Sprite: {fileID: 21300000, guid: 9bb7fa58a7f6b13489f1db94191b1b3f, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 3eacf9e2836fc1242bc853eee2621701, type: 3}
+    - m_Name: Bobeans2
+      m_Hash: 714898784
+      m_Sprite: {fileID: 21300000, guid: 1f3afff8990cb7e469ae7716f13f8cac, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 0d5c1bed61fd2ce41a09d4e2dab7e646, type: 3}
+    - m_Name: Bobeans3
+      m_Hash: 496717302
+      m_Sprite: {fileID: 21300000, guid: f1fe87737ef65b54183fd7b86f53a8c2, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: ad4b536aba9469c47ba4043c782731f2, type: 3}
+    - m_Name: Bobeans4
+      m_Hash: 67098709
+      m_Sprite: {fileID: 21300000, guid: 7f66d9a2c2b7cd841bdf09426c1e2dad, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 6a310774a3c714d4fb190b7b985c9bbe, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 4
+  - m_Name: Explode
+    m_Hash: 466490641
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: exp1
+      m_Hash: 163551241
+      m_Sprite: {fileID: 21300000, guid: ba830eb1b5ba1f243b4026aaafe6a3fb, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: ba830eb1b5ba1f243b4026aaafe6a3fb, type: 3}
+    - m_Name: exp2
+      m_Hash: 280414643
+      m_Sprite: {fileID: 21300000, guid: 3f08b9ba7c3157f4892c9f2028ef0f56, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 3f08b9ba7c3157f4892c9f2028ef0f56, type: 3}
+    - m_Name: exp3
+      m_Hash: 665975077
+      m_Sprite: {fileID: 21300000, guid: 0105a9cd8276feb419f134e0226b410a, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 0105a9cd8276feb419f134e0226b410a, type: 3}
+    - m_Name: exp4
+      m_Hash: 970288262
+      m_Sprite: {fileID: 21300000, guid: 94f1f6382dead46439c62a10c72efe11, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 94f1f6382dead46439c62a10c72efe11, type: 3}
+    - m_Name: exp5
+      m_Hash: 248667152
+      m_Sprite: {fileID: 21300000, guid: 3817b37334fbfed4fb3ed72da2a48c31, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 3817b37334fbfed4fb3ed72da2a48c31, type: 3}
+    - m_Name: exp6
+      m_Hash: 400231850
+      m_Sprite: {fileID: 21300000, guid: 998dddc028c718542a8fc44182f751cd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 998dddc028c718542a8fc44182f751cd, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 0
   m_PrimaryLibraryGUID: fdad53ab79f6fe14290eb3548cca6df4
-  m_ModificationHash: 638231231134757402
+  m_ModificationHash: 638231584139816150
   m_Version: 1
