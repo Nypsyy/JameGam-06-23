@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ObstacleCollision : MonoBehaviour
 {
+    //private DeathCount deathCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,9 @@ public class ObstacleCollision : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            //lancer animation de mort
+            Debug.Log("Censé perdre");
+            //deathCount.addDeath();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
