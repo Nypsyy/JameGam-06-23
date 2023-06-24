@@ -19,18 +19,12 @@ public class MCmove : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask surfaceGround;
-
+    
     public bool isFalling = false;
 
     public bool isThrowing = false;
 
     public bool noFlip = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
