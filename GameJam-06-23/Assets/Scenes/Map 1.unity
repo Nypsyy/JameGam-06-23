@@ -487,8 +487,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.4599998, y: -0.90929997, z: 0}
-    m_Extent: {x: 4.6982, y: 3.5542002, z: 0}
+    m_Center: {x: -0.45440006, y: -0.9127501, z: 0}
+    m_Extent: {x: 4.7068, y: 3.55195, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 8.1
@@ -3195,8 +3195,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.24880004, y: 0.069599986, z: 0}
-    m_Extent: {x: 4.1614, y: 2.5767002, z: 0}
+    m_Center: {x: 0.26015007, y: 0.067199945, z: 0}
+    m_Extent: {x: 4.15385, y: 2.5741, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8304,10 +8304,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CategoryHash: 0.009161512
-  m_labelHash: 0.000000069465116
+  m_CategoryHash: 2.5937557e-30
+  m_labelHash: 4.8888707e-35
   m_SpriteKey: 0
-  m_SpriteHash: 140786793
+  m_SpriteHash: 764596922
 --- !u!114 &1218087254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8384,7 +8384,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3342f623abd6fcf4aac9269c927617f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c1b90ef1f3a38e41969dbe06d2b3107, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

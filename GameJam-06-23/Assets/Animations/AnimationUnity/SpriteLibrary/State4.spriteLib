@@ -120,11 +120,6 @@ MonoBehaviour:
     m_Hash: 240283187
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: lancer1
-      m_Hash: 529049172
-      m_Sprite: {fileID: 21300000, guid: 82ba5ddae82da94488e6902548368fbe, type: 3}
-      m_FromMain: 1
-      m_SpriteOverride: {fileID: 21300000, guid: b51301245b69d4b418a19cc0de68bd21, type: 3}
     - m_Name: lancer2
       m_Hash: 109180910
       m_Sprite: {fileID: 21300000, guid: 5c1b90ef1f3a38e41969dbe06d2b3107, type: 3}
@@ -140,23 +135,8 @@ MonoBehaviour:
       m_Sprite: {fileID: 21300000, guid: c43944eb8d4b7d142893bbb3089ea3cf, type: 3}
       m_FromMain: 1
       m_SpriteOverride: {fileID: 21300000, guid: 319ef874c2398f44583235f79744ca18, type: 3}
-    - m_Name: lancer5
-      m_Hash: 417686093
-      m_Sprite: {fileID: 21300000, guid: f15a6b23e29af8e4ba4a42659262288c, type: 3}
-      m_FromMain: 1
-      m_SpriteOverride: {fileID: 21300000, guid: d313b1b378a295b4389305753683be61, type: 3}
-    - m_Name: lancer6
-      m_Hash: 32257015
-      m_Sprite: {fileID: 21300000, guid: a1b77e70c0f2cd14ea509e6c56327d23, type: 3}
-      m_FromMain: 1
-      m_SpriteOverride: {fileID: 21300000, guid: 208b7ae357371db49860d9f45de4ce2d, type: 3}
-    - m_Name: lancer7
-      m_Hash: 921371489
-      m_Sprite: {fileID: 21300000, guid: 70be0f8b0e5b1b04a8fc20acefc359e7, type: 3}
-      m_FromMain: 1
-      m_SpriteOverride: {fileID: 21300000, guid: ebd3addb2417d2342a55b40dec1a150b, type: 3}
     m_FromMain: 1
-    m_EntryOverrideCount: 7
+    m_EntryOverrideCount: 3
   - m_Name: Walk
     m_Hash: 765711723
     m_CategoryList: []
@@ -219,6 +199,27 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: 21300000, guid: 998dddc028c718542a8fc44182f751cd, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 0
+  - m_Name: Throw2
+    m_Hash: 629902709
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: lancer5
+      m_Hash: 417686093
+      m_Sprite: {fileID: 21300000, guid: f15a6b23e29af8e4ba4a42659262288c, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: d313b1b378a295b4389305753683be61, type: 3}
+    - m_Name: lancer6
+      m_Hash: 32257015
+      m_Sprite: {fileID: 21300000, guid: a1b77e70c0f2cd14ea509e6c56327d23, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 208b7ae357371db49860d9f45de4ce2d, type: 3}
+    - m_Name: lancer7
+      m_Hash: 921371489
+      m_Sprite: {fileID: 21300000, guid: 70be0f8b0e5b1b04a8fc20acefc359e7, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: ebd3addb2417d2342a55b40dec1a150b, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 3
   m_PrimaryLibraryGUID: fdad53ab79f6fe14290eb3548cca6df4
-  m_ModificationHash: 638231584294153110
+  m_ModificationHash: 638232250180013911
   m_Version: 1
