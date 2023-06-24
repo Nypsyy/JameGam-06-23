@@ -10,8 +10,6 @@ public class FlareCollision : MonoBehaviour
     private CapsuleCollider2D capsuleCollider;
     private GameObject ground;
     public PhysicsMaterial2D inert;
-    bool hitGround = false;
-
     // Start is called before the first frame update
     void Start()
     {
