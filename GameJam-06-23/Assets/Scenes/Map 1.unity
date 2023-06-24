@@ -189,8 +189,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.4602499, y: -0.90785, z: 0}
-    m_Extent: {x: 4.70215, y: 3.55185, z: 0}
+    m_Center: {x: -0.4537499, y: -0.90865004, z: 0}
+    m_Extent: {x: 4.6965504, y: 3.5465503, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 8.1
@@ -1221,8 +1221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a6c2a80843b5c47b9ba1e1fe85c7ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Light2D: {fileID: 0}
-  SpriteLibrary: {fileID: 0}
   states:
   - {fileID: 7108339969198208228, guid: fdad53ab79f6fe14290eb3548cca6df4, type: 3}
   - {fileID: 7108339969198208228, guid: accfbc2b1e3713649b082a9ab6e784a6, type: 3}
@@ -1421,7 +1419,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1402826521
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 02deb2876fd54c144aece90cb42524bc, type: 3}
   m_Color: {r: 0.7051065, g: 0.66202384, b: 0.8207547, a: 1}
@@ -1431,7 +1429,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &889095486
@@ -1502,8 +1500,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.2569499, y: 0.06435001, z: 0}
-    m_Extent: {x: 4.16715, y: 2.57975, z: 0}
+    m_Center: {x: 0.2607001, y: 0.063249946, z: 0}
+    m_Extent: {x: 4.1555, y: 2.5718498, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7367,7 +7365,7 @@ SpriteRenderer:
   m_Size: {x: 200, y: 33.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1638545803
