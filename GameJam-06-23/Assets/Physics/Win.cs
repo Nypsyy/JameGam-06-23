@@ -22,6 +22,7 @@ public class Win : MonoBehaviour
     {
         if(collision.tag == "Ground")
         {
+            gameObject.GetComponent<MCmove>().noFlip = true;
             winText.gameObject.SetActive(true);
             Time.timeScale = 0;
         }
