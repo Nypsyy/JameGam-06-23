@@ -12,17 +12,19 @@ public class BeanMovement : MonoBehaviour
     public float jumpForce = 10f;
     public float horizontalSpeedFactor = 10f;
 
-
     private PlayerActions _playerActions;
     private Vector2 _moveVector;
     private float _horizontalSpeed;
-    private float _previousYSpeed;
     private bool _isJumping;
     private bool _isGrounded;
-
     private bool _isThrowing;
+    private bool _isFlipped;
 
     public void OnJump() {
+        _isGrounded = false;
+    }
+
+    public void OnFall() {
         _isGrounded = false;
     }
 
@@ -35,7 +37,8 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void StartJump() {
-        if (!_isGrounded) return;
+        if (!_isGrounded)
+            return;
         _isJumping = true;
     }
 
@@ -53,28 +56,23 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void Update() {
+        TryFlip();
 
-
-        if(_isThrowing){
+        if (_isThrowing) {
             return;
         }
+
         _moveVector.Set(horizontalSpeedFactor * _playerActions.Main.Move.ReadValue<float>(), rb2d.velocity.y);
 
         if (_isJumping) {
             _moveVector.y = jumpForce;
         }
 
-        if (_moveVector.y < 0 && _previousYSpeed >= 0) {
-            onFallEvent.Invoke();
-        }
-
         if (Input.GetMouseButtonDown(1) && _isGrounded) {
             onThrowEvent.Invoke();
         }
-
-        _previousYSpeed = _moveVector.y;
     }
-    
+
     private void FixedUpdate() {
         rb2d.velocity = _moveVector;
     }
@@ -86,8 +84,14 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void OnCollisionExit2D(Collision2D other) {
-        if (other.collider.CompareTag("Ground") && _isJumping) {
+        if (!other.collider.CompareTag("Ground"))
+            return;
+
+        if (_isJumping) {
             onJumpEvent.Invoke();
+        }
+        else {
+            onFallEvent.Invoke();
         }
     }
 
@@ -103,5 +107,15 @@ public class BeanMovement : MonoBehaviour
         _playerActions.Disable();
     }
 
+    private void TryFlip() {
+        if ((!_isFlipped || _moveVector.x <= 0) && (_isFlipped || _moveVector.x >= 0))
+            return;
 
+        _isFlipped = !_isFlipped;
+
+        var selfTransform = transform;
+        var currentScale = selfTransform.localScale;
+        currentScale.x *= -1;
+        selfTransform.localScale = currentScale;
+    }
 }
