@@ -470,7 +470,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.75
   m_Color: {r: 0.45987692, g: 0.27727836, b: 0.8773585, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 0.3
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 173d7538e79062ac00000000
@@ -487,8 +487,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.45525002, y: -0.91804993, z: 0}
-    m_Extent: {x: 4.70385, y: 3.54955, z: 0}
+    m_Center: {x: -0.4599998, y: -0.90929997, z: 0}
+    m_Extent: {x: 4.6982, y: 3.5542002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 8.1
@@ -3195,8 +3195,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.25814998, y: 0.06279993, z: 0}
-    m_Extent: {x: 4.16915, y: 2.579, z: 0}
+    m_Center: {x: 0.24880004, y: 0.069599986, z: 0}
+    m_Extent: {x: 4.1614, y: 2.5767002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -17545,6 +17545,7 @@ MonoBehaviour:
   MCSprite: {fileID: 1218087250}
   rb: {fileID: 1383773204}
   MC: {fileID: 1383773200}
+  light: {fileID: 1881703211}
 --- !u!1 &1580421683
 GameObject:
   m_ObjectHideFlags: 0

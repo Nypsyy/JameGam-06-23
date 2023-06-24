@@ -15,6 +15,10 @@ public class ObstacleCollision : MonoBehaviour
 
     [SerializeField]
     private GameObject MC;
+
+    
+    [SerializeField]
+    private GameObject light;
     
     void Start()
     {
@@ -36,6 +40,7 @@ public class ObstacleCollision : MonoBehaviour
             rb.velocity = new Vector2(0f, 0f);
             MC.GetComponent<MCmove>().stopMovement();
             rb.gravityScale  = 0f;
+            Destroy(light);
             MCSprite.GetComponent<Animator>().Play("explode");
         }
     }
