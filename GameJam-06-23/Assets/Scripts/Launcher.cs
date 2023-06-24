@@ -16,6 +16,11 @@ public class Launcher : MonoBehaviour
 
     Vector2 velocity, startMousePos, currentMousePos;
 
+    private void Start()
+    {
+        lineRenderer.material.SetColor("_Color", Color.yellow);
+    }
+
     private void Update() 
     {
         if (Input.GetMouseButtonDown(0))
@@ -52,7 +57,7 @@ public class Launcher : MonoBehaviour
 
             positions[i] = pos;
         }
-
+        
         lineRenderer.positionCount = trajectoryStepCount;
         lineRenderer.SetPositions(positions);
     }
