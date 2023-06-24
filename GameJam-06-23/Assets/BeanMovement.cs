@@ -6,6 +6,7 @@ public class BeanMovement : MonoBehaviour
     public UnityEvent onLandEvent;
     public UnityEvent onFallEvent;
     public UnityEvent onJumpEvent;
+    public UnityEvent onThrowEvent;
     public Rigidbody2D rb2d;
 
     public float jumpForce = 10f;
@@ -19,12 +20,18 @@ public class BeanMovement : MonoBehaviour
     private bool _isJumping;
     private bool _isGrounded;
 
+    private bool _isThrowing;
+
     public void OnJump() {
         _isGrounded = false;
     }
 
     public void OnLand() {
         _isGrounded = true;
+    }
+
+    public void OnThrow() {
+        _isThrowing = true;
     }
 
     private void StartJump() {
@@ -42,17 +49,27 @@ public class BeanMovement : MonoBehaviour
         onLandEvent ??= new UnityEvent();
         onFallEvent ??= new UnityEvent();
         onJumpEvent ??= new UnityEvent();
+        onThrowEvent ??= new UnityEvent();
     }
 
     private void Update() {
+
+
+        if(_isThrowing){
+            return;
+        }
         _moveVector.Set(horizontalSpeedFactor * _playerActions.Main.Move.ReadValue<float>(), rb2d.velocity.y);
-        
+
         if (_isJumping) {
             _moveVector.y = jumpForce;
         }
 
         if (_moveVector.y < 0 && _previousYSpeed >= 0) {
             onFallEvent.Invoke();
+        }
+
+        if (Input.GetMouseButtonDown(1) && _isGrounded) {
+            onThrowEvent.Invoke();
         }
 
         _previousYSpeed = _moveVector.y;
@@ -81,4 +98,10 @@ public class BeanMovement : MonoBehaviour
     private void OnDisable() {
         _playerActions.Disable();
     }
+
+    public void OnDeath() {
+        _playerActions.Disable();
+    }
+
+
 }

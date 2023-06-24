@@ -36,6 +36,7 @@ public class BeanSrpite : MonoBehaviour
             SpriteLibrary.spriteLibraryAsset = assets[3];
         }
 
+
         animator.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
     }
 
@@ -47,5 +48,15 @@ public class BeanSrpite : MonoBehaviour
     public void OnFallAnimation() {
         animator.SetBool("IsJumping", false);
         animator.SetBool("IsFalling", true);
+    }
+
+
+    public void victory() {
+        animator.SetBool("Win", true);
+    }
+
+
+    public void onThrowAnimation(){
+        animator.SetBool("IsThrowing", true);
     }
 }

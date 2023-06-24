@@ -53,6 +53,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""afcef2f9-d2b3-49d4-a7e0-c1261035c380"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -110,6 +119,17 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""LongJump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b3b21093-c95c-4587-9783-5ed8667affe9"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -127,6 +147,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Main_Move = m_Main.FindAction("Move", throwIfNotFound: true);
         m_Main_Jump = m_Main.FindAction("Jump", throwIfNotFound: true);
         m_Main_LongJump = m_Main.FindAction("LongJump", throwIfNotFound: true);
+        m_Main_Throw = m_Main.FindAction("Throw", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -191,6 +212,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_Move;
     private readonly InputAction m_Main_Jump;
     private readonly InputAction m_Main_LongJump;
+    private readonly InputAction m_Main_Throw;
     public struct MainActions
     {
         private @PlayerActions m_Wrapper;
@@ -198,6 +220,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Main_Move;
         public InputAction @Jump => m_Wrapper.m_Main_Jump;
         public InputAction @LongJump => m_Wrapper.m_Main_LongJump;
+        public InputAction @Throw => m_Wrapper.m_Main_Throw;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -216,6 +239,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @LongJump.started += instance.OnLongJump;
             @LongJump.performed += instance.OnLongJump;
             @LongJump.canceled += instance.OnLongJump;
+            @Throw.started += instance.OnThrow;
+            @Throw.performed += instance.OnThrow;
+            @Throw.canceled += instance.OnThrow;
         }
 
         private void UnregisterCallbacks(IMainActions instance)
@@ -229,6 +255,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @LongJump.started -= instance.OnLongJump;
             @LongJump.performed -= instance.OnLongJump;
             @LongJump.canceled -= instance.OnLongJump;
+            @Throw.started -= instance.OnThrow;
+            @Throw.performed -= instance.OnThrow;
+            @Throw.canceled -= instance.OnThrow;
         }
 
         public void RemoveCallbacks(IMainActions instance)
@@ -260,5 +289,6 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLongJump(InputAction.CallbackContext context);
+        void OnThrow(InputAction.CallbackContext context);
     }
 }

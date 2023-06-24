@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Win : MonoBehaviour
 {
@@ -9,10 +10,13 @@ public class Win : MonoBehaviour
     [SerializeField]
     private GameObject MCSprite;
 
+
+    public UnityEvent win; 
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+      win ??= new UnityEvent();  
     }
 
     // Update is called once per frame
@@ -28,8 +32,8 @@ public class Win : MonoBehaviour
             gameObject.GetComponent<MCmove>().noFlip = true;
             gameObject.GetComponent<MCmove>().stopMovement();
             winText.gameObject.SetActive(true);
-            MCSprite.GetComponent<Animator>().Play("growth");
-            // Time.timeScale = 0;
+            win.Invoke();
+
         }
     }
 }
