@@ -37,7 +37,7 @@ public class ChangeState : MonoBehaviour
                     i++;
                 }
                 gameObject.GetComponent<SpriteLibrary>().spriteLibraryAsset = states[i];
-                MC.GetComponent<MCmove>().resertSpeed();
+                MC.GetComponent<MCmove>().resetSpeed();
 
             }
 

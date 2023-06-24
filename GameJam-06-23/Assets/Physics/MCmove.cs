@@ -24,6 +24,8 @@ public class MCmove : MonoBehaviour
 
     public bool isThrowing = false;
 
+    public bool noFlip = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +39,7 @@ public class MCmove : MonoBehaviour
 
         if(Input.GetMouseButtonDown(1) && IsGrounded()){
             animate("throw1");
-            moveSpeed = 0f;
-            jumpingPower = 0f;
+            stopMovement();
         }
 
         
@@ -78,7 +79,7 @@ public class MCmove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
        
     }
 
@@ -115,13 +116,17 @@ public class MCmove : MonoBehaviour
 
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-        {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+
+        if(!noFlip){
+            if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+            {
+                isFacingRight = !isFacingRight;
+                Vector3 localScale = transform.localScale;
+                localScale.x *= -1f;
+                transform.localScale = localScale;
+            }
         }
+
     }
 
 
@@ -134,10 +139,17 @@ public class MCmove : MonoBehaviour
         }
     }
 
-    public void resertSpeed(){
+    public void resetSpeed(){
         moveSpeed = 5f;
         jumpingPower = 8f;
         isThrowing = false;
+        noFlip = false;
+    }
+
+    public void stopMovement(){
+        noFlip = true;
+        moveSpeed = 0f;
+        jumpingPower = 0f;
     }
 }
   

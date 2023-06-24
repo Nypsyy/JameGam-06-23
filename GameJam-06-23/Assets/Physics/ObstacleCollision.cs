@@ -11,6 +11,10 @@ public class ObstacleCollision : MonoBehaviour
     [SerializeField]
     private GameObject MCSprite;
 
+    [SerializeField] private Rigidbody2D rb;
+
+    [SerializeField]
+    private GameObject MC;
     
     void Start()
     {
@@ -29,6 +33,9 @@ public class ObstacleCollision : MonoBehaviour
             //lancer animation de mort
             Debug.Log("Censé perdre");
             //deathCount.addDeath();
+            rb.velocity = new Vector2(0f, 0f);
+            MC.GetComponent<MCmove>().stopMovement();
+            rb.gravityScale  = 0f;
             MCSprite.GetComponent<Animator>().Play("explode");
         }
     }
