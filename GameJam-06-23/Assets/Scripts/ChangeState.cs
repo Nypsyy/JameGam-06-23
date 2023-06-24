@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
+using UnityEngine.SceneManagement;
 
 public class ChangeState : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class ChangeState : MonoBehaviour
     [SerializeField]
     private SpriteLibraryAsset[] states;
     private int i = 0;
+    [SerializeField]
+    private GameObject MC;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +28,18 @@ public class ChangeState : MonoBehaviour
     public void AlertObservers(string message)
     {
 
-        
-            if(i<3){
-                i++;
+            if(message == "death"){
+                gameObject.SetActive(false);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
-            gameObject.GetComponent<SpriteLibrary>().spriteLibraryAsset = states[i];
+            else if(message == "change"){
+                if(i<3){
+                    i++;
+                }
+                gameObject.GetComponent<SpriteLibrary>().spriteLibraryAsset = states[i];
+                MC.GetComponent<MCmove>().resetSpeed();
+
+            }
+
     }
 }
