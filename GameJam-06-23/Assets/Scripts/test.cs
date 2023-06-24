@@ -23,9 +23,6 @@ public class test : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Keypad0)){
             MC.GetComponent<Animator>().Play("jump1");
         }
-        else if(Input.GetKeyUp(KeyCode.Keypad1)){
-            MC.GetComponent<Animator>().Play("throw1");
-        }
         else if(Input.GetKeyUp(KeyCode.Keypad2)){
             MC.GetComponent<Animator>().Play("fall1");
         }

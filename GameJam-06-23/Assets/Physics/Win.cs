@@ -22,6 +22,7 @@ public class Win : MonoBehaviour
     {
         if(collision.tag == "Ground")
         {
+             Debug.Log("aaaaaaaa");
             winText.gameObject.SetActive(true);
             Time.timeScale = 0;
         }
