@@ -9,6 +9,10 @@ public class Win : MonoBehaviour
         onWinEvent ??= new UnityEvent();
     }
 
+
+    private void Start() {
+    }
+
     public void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Player")) {
             onWinEvent.Invoke();

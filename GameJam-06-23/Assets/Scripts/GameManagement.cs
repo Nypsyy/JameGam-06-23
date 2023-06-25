@@ -6,16 +6,9 @@ public class GameManagement : MonoBehaviour
 {
     public GameObject winMenuUI;
 
-    private AudioManager _audioManager;
 
-    private void Awake() {
-        _audioManager = FindObjectOfType<AudioManager>();
-    }
 
     private void Start() {
-        if (_audioManager != null) {
-            _audioManager.Play("Level1");
-        }
     }
 
     public void ReloadScene() {

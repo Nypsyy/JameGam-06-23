@@ -3,6 +3,7 @@ using UnityEngine.U2D.Animation;
 
 public class BeanAnimation : MonoBehaviour
 {
+    private AudioManager _audioManager;
     public Rigidbody2D rb2d;
     public SpriteLibraryAsset[] assets;
 
@@ -28,6 +29,7 @@ public class BeanAnimation : MonoBehaviour
     }
 
     private void Awake() {
+        _audioManager = FindObjectOfType<AudioManager>();
         _animator = GetComponent<Animator>();
         _spriteLibrary = GetComponent<SpriteLibrary>();
     }
@@ -63,14 +65,17 @@ public class BeanAnimation : MonoBehaviour
     }
 
     public void OnDeathAnimation() {
+        _audioManager.Play("Explosion");
         _animator.SetBool(Deadge, true);
     }
 
     public void OnWinAnimation() {
+        _audioManager.Play("Victoire");
         _animator.SetBool(AnimatorWin, true);
     }
 
     public void OnThrowAnimation() {
+        _audioManager.Play("Throw");
         _animator.SetBool(AnimatorIsThrowing, true);
     }
 

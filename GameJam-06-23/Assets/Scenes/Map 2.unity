@@ -5906,7 +5906,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -6558,8 +6558,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.22529995, y: -1.84345, z: 0}
-    m_Extent: {x: 4.1763, y: 3.9500499, z: 0}
+    m_Center: {x: 0.22494996, y: -1.8456999, z: 0}
+    m_Extent: {x: 4.17245, y: 3.9520001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7019,8 +7019,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.3818007, y: -9.02315, z: 0}
-    m_Extent: {x: 32.3699, y: 23.00515, z: 0}
+    m_Center: {x: -2.3866491, y: -9.025099, z: 0}
+    m_Extent: {x: 32.36915, y: 23.0026, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
