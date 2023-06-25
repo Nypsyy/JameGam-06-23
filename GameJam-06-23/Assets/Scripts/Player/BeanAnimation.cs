@@ -68,13 +68,13 @@ public class BeanAnimation : MonoBehaviour
     }
 
     public void OnDeathAnimation() {
-        _audioManager.Play("Explosion");
+        _audioManager?.Play("Explosion");
         _animator.SetBool(Deadge, true);
         gameObject.GetComponent<SpriteRenderer>().material = spriteDefault;
     }
 
     public void OnWinAnimation() {
-        _audioManager.Play("Victoire");
+        _audioManager?.Play("Victoire");
         _animator.SetBool(AnimatorWin, true);
     }
 
@@ -83,7 +83,7 @@ public class BeanAnimation : MonoBehaviour
     }
 
     public void OnLaunchAnimation() {
-        _audioManager.Play("Throw");
+        _audioManager?.Play("Throw");
         _animator.SetBool(AnimatorIsThrowing, false);
         _animator.SetBool(AnimatorIsLaunching, true);
     }
