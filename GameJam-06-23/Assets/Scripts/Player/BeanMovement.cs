@@ -56,8 +56,8 @@ public class BeanMovement : MonoBehaviour
     public void DisableInputs() {
         _inputManager.Disable();
     }
-    public void EnableInputs()
-    {
+
+    public void EnableInputs() {
         _inputManager.Enable();
     }
 
@@ -81,9 +81,7 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void TryThrow() {
-        if (_isGrounded) {
-        if (_isGrounded && GameObject.FindGameObjectWithTag("Flare") == null)
-        {
+        if (_isGrounded && GameObject.FindGameObjectWithTag("Flare") == null) {
             onThrowEvent.Invoke();
         }
     }
@@ -123,7 +121,7 @@ public class BeanMovement : MonoBehaviour
     private void FixedUpdate() {
         if (_isThrowing)
             return;
-        
+
         // If we jump, we get a constant velocity. Use physics otherwise
         _moveVector.y = _isJumping ? jumpForce : _rb2d.velocity.y;
         // If grounded, constant velocity
