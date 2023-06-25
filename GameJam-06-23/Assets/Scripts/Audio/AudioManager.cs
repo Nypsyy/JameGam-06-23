@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioMixerGroup mixerGroup;
     public Sound[] sounds;
 
     private static AudioManager _instance;
@@ -24,6 +26,13 @@ public class AudioManager : MonoBehaviour
             sound.source.volume = sound.volume;
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.loop;
+            sound.source.outputAudioMixerGroup = mixerGroup;
+        }
+    }
+
+    private void Start() {
+        if (PlayerPrefs.HasKey("MainVolume")) {
+            mixerGroup.audioMixer.SetFloat("MainVolume", Mathf.Log10(PlayerPrefs.GetFloat("MainVolume", 0f)) * 20);
         }
     }
 

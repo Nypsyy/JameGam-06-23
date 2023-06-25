@@ -1,16 +1,47 @@
+using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public Animator animator;
+    public GameObject mainUI;
+    public GameObject optionsUI;
 
     private AudioManager _audioManager;
-    public Animator animator;
+    private InputManager _inputManager;
+    private readonly WaitForSeconds _wait = new(1.45f);
+    private static readonly int IsPlay = Animator.StringToHash("IsPlay");
 
+    public void OpenOptions() {
+        if (optionsUI.activeSelf)
+            return;
+
+        optionsUI.SetActive(true);
+        mainUI.SetActive(false);
+    }
+
+    public void CloseOptions() {
+        if (!optionsUI.activeSelf)
+            return;
+
+        mainUI.SetActive(true);
+        optionsUI.SetActive(false);
+    }
+
+    public void QuitGame() {
+        _audioManager.Play("Menu");
+        Application.Quit();
+    }
 
     private void Awake() {
         _audioManager = FindObjectOfType<AudioManager>();
+        _inputManager = new InputManager();
+
+        _inputManager.UI.Cancel.performed += _ => CloseOptions();
     }
 
     private void Start() {
@@ -20,21 +51,22 @@ public class MainMenu : MonoBehaviour
     public void LoadGame() {
         _audioManager.Play("Menu");
         _audioManager.Stop("MusicMenu");
-        StartCoroutine(LoadNextScene(_audioManager,animator));
-
+        StartCoroutine(LoadNextScene());
     }
-    
-    
-    private static IEnumerator LoadNextScene(AudioManager _audioManager,  Animator animator) {
-        animator.SetBool("IsPlay", true);
-        yield return new WaitForSeconds(1.45f);
+
+
+    private IEnumerator LoadNextScene() {
+        animator.SetBool(IsPlay, true);
+        yield return _wait;
         _audioManager.Play("Level1");
         SceneManager.LoadScene("Map 1");
     }
 
-    public void QuitGame() {
-        _audioManager.Play("Menu");
-        Debug.Log("Quit");
-        Application.Quit();
+    private void OnEnable() {
+        _inputManager.Enable();
+    }
+
+    private void OnDisable() {
+        _inputManager.Disable();
     }
 }
