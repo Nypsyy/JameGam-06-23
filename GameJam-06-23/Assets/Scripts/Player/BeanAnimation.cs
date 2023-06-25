@@ -69,15 +69,16 @@ public class BeanAnimation : MonoBehaviour
         _animator.SetBool(AnimatorIsThrowing, false);
         _animator.SetBool(AnimatorIsLaunching, true);
         
+
+    }
+
+    public void StopLaunchAnimation() {
+        _animator.SetBool(AnimatorIsLaunching, false);
         if (_currentAssetIndex < 3) {
             _currentAssetIndex++;
         }
 
         _spriteLibrary.spriteLibraryAsset = assets[_currentAssetIndex];
-    }
-
-    public void StopLaunchAnimation() {
-        _animator.SetBool(AnimatorIsLaunching, false);
     }
     
     private void Awake() {
