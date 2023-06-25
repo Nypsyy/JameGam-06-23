@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 12147771944114890}
   - component: {fileID: 3160377914061457935}
-  - component: {fileID: 504878239301103150}
+  - component: {fileID: 6582919843526191054}
   - component: {fileID: 6644068140884482452}
   - component: {fileID: 6389310166782642182}
   m_Layer: 7
@@ -230,8 +230,8 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &504878239301103150
-BoxCollider2D:
+--- !u!60 &6582919843526191054
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -262,7 +262,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0041561127, y: -0.03948182}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -272,9 +272,15 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.67583275, y: 1.3449463}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.35082626, y: 0.63202894}
+      - {x: -0.34883976, y: 0.6339991}
+      - {x: -0.351883, y: -0.6963181}
+      - {x: -0.31722873, y: -0.7207992}
+      - {x: 0.31913817, y: -0.7188897}
+      - {x: 0.35103703, y: -0.6944542}
+  m_UseDelaunayMesh: 0
 --- !u!61 &6644068140884482452
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -307,7 +313,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.006257057, y: -0.7070207}
+  m_Offset: {x: -0.00076293945, y: -0.71195304}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -318,7 +324,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6439915, y: 0.08788836}
+  m_Size: {x: 0.62345123, y: 0.09775305}
   m_EdgeRadius: 0
 --- !u!114 &6389310166782642182
 MonoBehaviour:
@@ -475,6 +481,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7512576393593550820}
         m_TargetAssemblyTypeName: Launcher, Assembly-CSharp
         m_MethodName: SetThrowing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
+        m_MethodName: DecreasePlayerLight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

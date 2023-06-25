@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
@@ -86,7 +87,6 @@ public class BeanMovement : MonoBehaviour
         }
     }
 
-
     private void Throw() {
         if (_isThrowing) {
             onLaunchEvent.Invoke();
@@ -152,8 +152,8 @@ public class BeanMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other) {
-        if (!other.collider.CompareTag("Ground"))
+    private void OnTriggerExit2D(Collider2D other) {
+        if (!other.CompareTag("Ground"))
             return;
 
         if (_isJumping) {

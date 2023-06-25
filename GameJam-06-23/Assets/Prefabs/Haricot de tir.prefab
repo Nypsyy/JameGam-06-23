@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5135387647578910844}
   - component: {fileID: -7597325618079821881}
   - component: {fileID: 7308672685599642438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Haricot de tir
   m_TagString: Flare
   m_Icon: {fileID: 0}

@@ -15,7 +15,7 @@ public class BeanAnimation : MonoBehaviour
     private Vector2 _moveVector;
     private bool _isJumping;
     private bool _isGrounded;
-    private short _beanStateIndex;
+    private short _currentAssetIndex;
 
     private static readonly int AnimatorIsJumping = Animator.StringToHash("IsJumping");
     private static readonly int AnimatorIsFalling = Animator.StringToHash("IsFalling");
@@ -30,33 +30,6 @@ public class BeanAnimation : MonoBehaviour
         _animator.SetBool(AnimatorIsFalling, false);
     }
 
-
-    private void Awake() {
-        _audioManager = FindObjectOfType<AudioManager>();
-        _animator = GetComponent<Animator>();
-        _spriteLibrary = GetComponent<SpriteLibrary>();
-    }
-
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Keypad1)) {
-            _spriteLibrary.spriteLibraryAsset = assets[0];
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad2)) {
-            _spriteLibrary.spriteLibraryAsset = assets[1];
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad3)) {
-            _spriteLibrary.spriteLibraryAsset = assets[2];
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad4)) {
-            _spriteLibrary.spriteLibraryAsset = assets[3];
-        }
-
-        _animator.SetFloat(AnimatorSpeed, Mathf.Abs(rb2d.velocity.x));
-    }
-
     public void OnLandAnimation() {
         _animator.SetBool(AnimatorIsFalling, false);
         _animator.SetBool(AnimatorIsJumping, false);
@@ -68,13 +41,19 @@ public class BeanAnimation : MonoBehaviour
     }
 
     public void OnDeathAnimation() {
-        _audioManager.Play("Explosion");
+        if (_audioManager != null) {
+            _audioManager.Play("Explosion");
+        }
+
         _animator.SetBool(Deadge, true);
         gameObject.GetComponent<SpriteRenderer>().material = spriteDefault;
     }
 
     public void OnWinAnimation() {
-        _audioManager.Play("Victoire");
+        if (_audioManager != null) {
+            _audioManager.Play("Victoire");
+        }
+
         _animator.SetBool(AnimatorWin, true);
     }
 
@@ -83,21 +62,31 @@ public class BeanAnimation : MonoBehaviour
     }
 
     public void OnLaunchAnimation() {
-        _audioManager.Play("Throw");
-        _animator.SetBool(AnimatorIsThrowing, false);
-        _animator.SetBool(AnimatorIsLaunching, true);
-    }
-
-    public void UpdateBeanState() {
-        if (_beanStateIndex < 3) {
-            _beanStateIndex++;
+        if (_audioManager != null) {
+            _audioManager.Play("Throw");
         }
 
-        _spriteLibrary.spriteLibraryAsset = assets[_beanStateIndex];
+        _animator.SetBool(AnimatorIsThrowing, false);
+        _animator.SetBool(AnimatorIsLaunching, true);
+        
+        if (_currentAssetIndex < 3) {
+            _currentAssetIndex++;
+        }
+
+        _spriteLibrary.spriteLibraryAsset = assets[_currentAssetIndex];
     }
 
-
-    public void stopLaunchAnimation() {
+    public void StopLaunchAnimation() {
         _animator.SetBool(AnimatorIsLaunching, false);
+    }
+    
+    private void Awake() {
+        _audioManager = FindObjectOfType<AudioManager>();
+        _animator = GetComponent<Animator>();
+        _spriteLibrary = GetComponent<SpriteLibrary>();
+    }
+
+    private void Update() {
+        _animator.SetFloat(AnimatorSpeed, Mathf.Abs(rb2d.velocity.x));
     }
 }
