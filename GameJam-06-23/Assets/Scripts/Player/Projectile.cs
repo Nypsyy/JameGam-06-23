@@ -57,10 +57,12 @@ public class Projectile : MonoBehaviour
         _beanMovement = FindObjectOfType<BeanMovement>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Finish")) {
-            Debug.Log("Mat inerte");
-            _collider2D.sharedMaterial = inert;
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("FlareDestruct"))
+        {
+            Destroy(_flare);
+            _beanMovement.EnableInputs();
         }
     }
 }

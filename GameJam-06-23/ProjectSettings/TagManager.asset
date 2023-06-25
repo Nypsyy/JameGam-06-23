@@ -10,6 +10,7 @@ TagManager:
   - SpriteMC
   - Flare
   - MCLight
+  - FlareDestruct
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - UI
   - surfaceGround
   - Player
-  - Ground
+  - Finish
   - Flare
-  - 
+  - InvisibleWalls
   - 
   - 
   - 
