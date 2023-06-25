@@ -23,11 +23,17 @@ public class AudioManager : MonoBehaviour
 
             sound.source.volume = sound.volume;
             sound.source.pitch = sound.pitch;
+            sound.source.loop= sound.loop;
         }
     }
 
     public void Play(string soundName) {
         var s = Array.Find(sounds, sound => sound.name == soundName);
         s?.source.Play();
+    }
+
+    public void Stop(string soundName) {
+        var s = Array.Find(sounds,sound=>sound.name==soundName);
+        s?.source.Stop();
     }
 }

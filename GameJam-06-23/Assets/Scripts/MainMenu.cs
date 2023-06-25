@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private AudioManager AudioManager;
+    private void Awake(){
+        AudioManager= Object.FindObjectOfType<AudioManager>();
+    }
+    
+    private void Start(){
+        AudioManager.Play("MusicMenu");
+    }
+
     public void LoadGame() {
         SceneManager.LoadScene("Map 1");
     }
