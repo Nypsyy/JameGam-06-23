@@ -419,8 +419,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4fe3f7155319f40887068da25a3495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCSprite: {fileID: 1218087250}
-  MC: {fileID: 1383773200}
+  onFallEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &19636966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,6 +1269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313b48bf8b3186c40a3e3824d1525b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winMenuUI: {fileID: 0}
 --- !u!4 &262939016
 Transform:
   m_ObjectHideFlags: 0
@@ -3069,8 +3071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011cdc878926fcd40a357ec470b1abd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NbDeath: 0
-  nbdeathText: {fileID: 0}
+  nbDeath: 0
+  nbDeathText: {fileID: 0}
 --- !u!1 &776183985
 GameObject:
   m_ObjectHideFlags: 0
@@ -8525,7 +8527,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14463,8 +14465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b54eae3134229488d59caa24dea7b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winText: {fileID: 776183987}
-  MCSprite: {fileID: 0}
+  onWinEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1383773202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17871,10 +17874,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211f9a32a0316c340aa94248a88d686b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCSprite: {fileID: 1218087250}
-  rb: {fileID: 1383773204}
-  MC: {fileID: 1383773200}
-  light: {fileID: 1881703211}
+  onDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1580421683
 GameObject:
   m_ObjectHideFlags: 0

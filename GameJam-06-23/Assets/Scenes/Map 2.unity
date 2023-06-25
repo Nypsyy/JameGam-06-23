@@ -5790,10 +5790,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211f9a32a0316c340aa94248a88d686b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCSprite: {fileID: 1680839895}
-  rb: {fileID: 1022080895}
-  MC: {fileID: 1022080891}
-  light: {fileID: 1903359213}
+  onDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!19719996 &756031499
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -6634,8 +6633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b54eae3134229488d59caa24dea7b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winText: {fileID: 1442099788}
-  MCSprite: {fileID: 1680839895}
+  onWinEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1022080893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72323,6 +72323,7 @@ MonoBehaviour:
   cameraSurface: {fileID: 2040504655}
   cameraFlare: {fileID: 2028141137}
   cameraMC: {fileID: 1655811363}
+  newFlare: {fileID: 0}
 --- !u!61 &1334902672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81107,7 +81108,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81934,8 +81935,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4fe3f7155319f40887068da25a3495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MCSprite: {fileID: 1680839895}
-  MC: {fileID: 1022080891}
+  onFallEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!483693784 &1915778445
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -82252,6 +82254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313b48bf8b3186c40a3e3824d1525b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winMenuUI: {fileID: 0}
 --- !u!4 &1925512130
 Transform:
   m_ObjectHideFlags: 0
@@ -82312,8 +82315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011cdc878926fcd40a357ec470b1abd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NbDeath: 0
-  nbdeathText: {fileID: 0}
+  nbDeath: 0
+  nbDeathText: {fileID: 0}
 --- !u!1 &2028141137
 GameObject:
   m_ObjectHideFlags: 0

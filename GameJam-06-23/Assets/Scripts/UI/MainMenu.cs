@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame() {
         SceneManager.LoadScene("Map 1");
+        _audioManager.Stop("MusicMenu");
     }
 
     public void QuitGame() {
