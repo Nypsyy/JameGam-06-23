@@ -45,7 +45,7 @@ public class MainMenu : MonoBehaviour
     }
 
     private void Start() {
-        _audioManager.Play("MusicMenu");
+        _audioManager.Play("Level0");
     }
 
     public void LoadGame() {
