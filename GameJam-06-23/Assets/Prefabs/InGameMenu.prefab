@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 1245753935975691883}
   - component: {fileID: 4268135297856877560}
   - component: {fileID: 5007889827599570874}
+  - component: {fileID: 1106671717302811601}
   m_Layer: 5
   m_Name: InGameMenu
   m_TagString: Untagged
@@ -915,6 +916,18 @@ MonoBehaviour:
       - m_Target: {fileID: 4268135297856877560}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: LoadMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1106671717302811601}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: StopCurrentTrack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
