@@ -98,11 +98,8 @@ public class BeanAnimation : MonoBehaviour
     }
 
 
-    public void HandlerEvent(string name)
+    public void stopLaunchAnimation()
     {
-        if (name == "launch")
-        {
             _animator.SetBool(AnimatorIsLaunching, false);
-        }
     }
 }
