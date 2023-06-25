@@ -38,11 +38,12 @@ public class BeanMovement : MonoBehaviour
     }
 
     public void OnThrow() {
-        _rb2d.simulated = false;
+        _isThrowing = true;
+        _rb2d.velocity = Vector2.zero;
     }
-    
+
     public void OnLaunch() {
-        _rb2d.simulated = false;
+        _isThrowing = false;
     }
 
     public void OnDeath() {
@@ -53,7 +54,7 @@ public class BeanMovement : MonoBehaviour
     }
 
     public void DisableInputs() {
-        _inputManager.Disable();    
+        _inputManager.Disable();
     }
 
     private void StartJump() {
@@ -76,18 +77,15 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void TryThrow() {
-        if (_isGrounded)
-        {
-            _isThrowing = true;
+        if (_isGrounded) {
             onThrowEvent.Invoke();
         }
     }
-    
-    
+
+
     private void Throw() {
-        if (_isGrounded && _isThrowing) {
+        if (_isThrowing) {
             onLaunchEvent.Invoke();
-            _isThrowing = false;
         }
     }
 
@@ -99,14 +97,8 @@ public class BeanMovement : MonoBehaviour
         _inputManager.Player.LongJump.started += _ => StartJump();
         _inputManager.Player.LongJump.performed += _ => _isJumping = false;
         _inputManager.Player.LongJump.canceled += _ => _isJumping = false;
-        _inputManager.Player.Throw.performed += _ =>
-        {
-            TryThrow();
-        };
-        _inputManager.Player.Throw.canceled += _ =>
-        {
-            Throw();
-        };
+        _inputManager.Player.Throw.performed += _ => TryThrow();
+        _inputManager.Player.Throw.canceled += _ => Throw();
         _inputManager.Player.Move.performed += context => _inputMove = context.ReadValue<float>();
         _inputManager.Player.Move.canceled += _ => _inputMove = 0f;
 
@@ -123,6 +115,9 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        if (_isThrowing)
+            return;
+        
         // If we jump, we get a constant velocity. Use physics otherwise
         _moveVector.y = _isJumping ? jumpForce : _rb2d.velocity.y;
         // If grounded, constant velocity
@@ -154,7 +149,7 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void OnCollisionExit2D(Collision2D other) {
-        if (!other.collider.CompareTag("Ground") || _isThrowing)
+        if (!other.collider.CompareTag("Ground"))
             return;
 
         if (_isJumping) {

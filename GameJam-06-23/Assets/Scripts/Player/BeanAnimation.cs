@@ -7,7 +7,7 @@ public class BeanAnimation : MonoBehaviour
     public Rigidbody2D rb2d;
     public SpriteLibraryAsset[] assets;
     public Material spriteDefault;
-    
+
     private Animator _animator;
     private SpriteLibrary _spriteLibrary;
 
@@ -29,8 +29,7 @@ public class BeanAnimation : MonoBehaviour
         _animator.SetBool(AnimatorIsJumping, true);
         _animator.SetBool(AnimatorIsFalling, false);
     }
-    
-    
+
 
     private void Awake() {
         _audioManager = FindObjectOfType<AudioManager>();
@@ -82,7 +81,7 @@ public class BeanAnimation : MonoBehaviour
     public void OnThrowAnimation() {
         _animator.SetBool(AnimatorIsThrowing, true);
     }
-    
+
     public void OnLaunchAnimation() {
         _audioManager.Play("Throw");
         _animator.SetBool(AnimatorIsThrowing, false);
@@ -98,8 +97,7 @@ public class BeanAnimation : MonoBehaviour
     }
 
 
-    public void stopLaunchAnimation()
-    {
-            _animator.SetBool(AnimatorIsLaunching, false);
+    public void stopLaunchAnimation() {
+        _animator.SetBool(AnimatorIsLaunching, false);
     }
 }
