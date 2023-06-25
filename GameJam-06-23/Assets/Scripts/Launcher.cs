@@ -12,6 +12,8 @@ public class Launcher : MonoBehaviour
     [SerializeField] float trajectoryTimeStep = 0.05f;
     [SerializeField] int trajectoryStepCount = 15;
 
+    private GameObject flare;
+
     private bool mc_FacingRight = true;
 
     Vector2 velocity, startMousePos, currentMousePos;
@@ -23,12 +25,13 @@ public class Launcher : MonoBehaviour
 
     private void Update() 
     {
-        if (Input.GetMouseButtonDown(0))
+        flare = GameObject.FindGameObjectWithTag("Flare");
+        if (Input.GetMouseButtonDown(0) && flare==null)
         {
             startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && flare == null)
         {
             currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             velocity = (startMousePos - currentMousePos) * launchForce;
@@ -37,7 +40,7 @@ public class Launcher : MonoBehaviour
             RotateLauncher();
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && flare == null)
         {
             FireProjectile();
             ClearTrajectory() ;
