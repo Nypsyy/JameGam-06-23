@@ -164,6 +164,7 @@ MonoBehaviour:
   launchForce: 1.5
   trajectoryTimeStep: 0.05
   trajectoryStepCount: 15
+  gravityFactor: 0.9
 --- !u!1 &2895318171244681945
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +503,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _isFlipped: 0
 --- !u!1 &4303996061232136150
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +707,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Library: []
+  m_Library:
+  - m_Name: Growth
+    m_Hash: 0
+    m_CategoryList:
+    - m_Name: fall7
+      m_Hash: 0
+      m_Sprite: {fileID: 21300000, guid: 1bce47ea5f6f6074fb23dddb0733de68, type: 3}
   m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: fdad53ab79f6fe14290eb3548cca6df4, type: 3}
 --- !u!114 &7184812052004763581
 MonoBehaviour:
