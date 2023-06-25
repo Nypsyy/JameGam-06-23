@@ -2709,11 +2709,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!1 &89532618 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5210064569388120229, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
-  m_PrefabInstance: {fileID: 1155990864}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &120886742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2913,6 +2908,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de9de1f2d3d467246afe0868d1c0f6fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &196294401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5007889827599570874, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+  m_PrefabInstance: {fileID: 196294395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196294396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313b48bf8b3186c40a3e3824d1525b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &323196182
@@ -5796,11 +5802,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &868514048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2895318171244681945, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
-  m_PrefabInstance: {fileID: 1155990864}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &896726702
 GameObject:
   m_ObjectHideFlags: 0
@@ -6297,8 +6298,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.22415006, y: -1.8506, z: 0}
-    m_Extent: {x: 4.17475, y: 3.9496, z: 0}
+    m_Center: {x: 0.22280002, y: -1.8434, z: 0}
+    m_Extent: {x: 4.1768, y: 3.9469, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6537,7 +6538,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6389310166782642182, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
   m_PrefabInstance: {fileID: 1155990864}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868514048}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a6a77f82615eba449183a345e78716d, type: 3}
@@ -6548,7 +6549,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 581177742440248295, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
   m_PrefabInstance: {fileID: 1155990864}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89532618}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91cd89bfa2451dd4fa39ea7fab3f4764, type: 3}
@@ -6682,8 +6683,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.3863993, y: -9.021151, z: 0}
-    m_Extent: {x: 32.3735, y: 23.00575, z: 0}
+    m_Center: {x: -2.3857012, y: -9.0212, z: 0}
+    m_Extent: {x: 32.3692, y: 23.008299, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -80552,7 +80553,7 @@ MonoBehaviour:
   onWinEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 868514048}
+      - m_Target: {fileID: 1155990865}
         m_TargetAssemblyTypeName: BeanMovement, Assembly-CSharp
         m_MethodName: DisableInputs
         m_Mode: 1
@@ -80564,7 +80565,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 89532618}
+      - m_Target: {fileID: 1155990866}
         m_TargetAssemblyTypeName: BeanAnimation, Assembly-CSharp
         m_MethodName: OnWinAnimation
         m_Mode: 1
@@ -80576,7 +80577,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 196294396}
+      - m_Target: {fileID: 196294401}
         m_TargetAssemblyTypeName: GameManagement, Assembly-CSharp
         m_MethodName: WinMenu
         m_Mode: 1
@@ -80588,7 +80589,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 50520474}
+      - m_Target: {fileID: 50520475}
         m_TargetAssemblyTypeName: CameraControls, Assembly-CSharp
         m_MethodName: winCamera
         m_Mode: 1
@@ -81294,7 +81295,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onFallEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1155990865}
+        m_TargetAssemblyTypeName: BeanMovement, Assembly-CSharp
+        m_MethodName: OnFall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1155990866}
+        m_TargetAssemblyTypeName: BeanAnimation, Assembly-CSharp
+        m_MethodName: OnFallAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!483693784 &1915778445
 TilemapRenderer:
   m_ObjectHideFlags: 0
