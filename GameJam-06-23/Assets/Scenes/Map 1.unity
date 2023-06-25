@@ -512,8 +512,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.46035004, y: -0.9076501, z: 0}
-    m_Extent: {x: 4.69875, y: 3.5482502, z: 0}
+    m_Center: {x: -0.44829988, y: -0.91490006, z: 0}
+    m_Extent: {x: 4.7023, y: 3.5507, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 8.1
@@ -2829,7 +2829,6 @@ GameObject:
   m_Component:
   - component: {fileID: 889095486}
   - component: {fileID: 889095485}
-  - component: {fileID: 889095487}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -2905,18 +2904,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &889095487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889095484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c946b6feb40d764c991475adb2c1f43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &946757978
 GameObject:
   m_ObjectHideFlags: 3
@@ -3056,8 +3043,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.25539994, y: 0.060500026, z: 0}
-    m_Extent: {x: 4.1612997, y: 2.5791001, z: 0}
+    m_Center: {x: 0.26255012, y: 0.06494999, z: 0}
+    m_Extent: {x: 4.16735, y: 2.58555, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    private AudioManager _audioManager;
     public GameObject pauseMenuUI;
     public GameObject commandsUI;
     public GameObject tutorialUI;
@@ -12,12 +13,14 @@ public class PauseMenu : MonoBehaviour
     private bool _isPaused;
 
     private void Awake() {
+        _audioManager = FindObjectOfType<AudioManager>();
         _inputManager = new InputManager();
 
         _inputManager.UI.Cancel.performed += _ => ManagePause();
     }
 
     private void Start() {
+
         if (!levelData.showTutorial)
             return;
 
@@ -40,24 +43,27 @@ public class PauseMenu : MonoBehaviour
     }
 
     private void PauseGame() {
+        _audioManager.Play("Menu");  
         pauseMenuUI.SetActive(true);
-
         Time.timeScale = 0f;
         _isPaused = true;
     }
 
     public void ResumeGame() {
+        _audioManager.Play("Menu");  
         Time.timeScale = 1f;
         _isPaused = false;
-
         pauseMenuUI.SetActive(false);
     }
 
     public void LoadMainMenu() {
+        _audioManager.Play("Menu");    
+        _audioManager.Stop("Level1");
         SceneManager.LoadScene("Menu");
     }
 
     public void ShowCommands() {
+        _audioManager.Play("Menu");  
         Time.timeScale = 0f;
         _isPaused = true;
 
@@ -66,6 +72,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void HideCommands() {
+        _audioManager.Play("Menu");  
         pauseMenuUI.SetActive(true);
         commandsUI.SetActive(false);
     }
