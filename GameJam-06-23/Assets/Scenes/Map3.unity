@@ -549,8 +549,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.1488, y: 0.36940002, z: 0}
-    m_Extent: {x: 69.9704, y: 41.2053, z: 0}
+    m_Center: {x: -3.1450996, y: 0.36305046, z: 0}
+    m_Extent: {x: 69.9577, y: 41.210052, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1312,6 +1312,10 @@ PrefabInstance:
     - target: {fileID: 772438839815698778, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_Name
       value: InGameMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 772438839815698778, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3385736123308563357, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_Pivot.x

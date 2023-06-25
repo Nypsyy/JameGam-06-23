@@ -2793,6 +2793,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 772438839815698778, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3385736123308563357, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2914,6 +2918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9de1f2d3d467246afe0868d1c0f6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelData: {fileID: 0}
 --- !u!114 &196294401 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5007889827599570874, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
@@ -6211,8 +6216,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.22029996, y: -1.84735, z: 0}
-    m_Extent: {x: 4.1823997, y: 3.94415, z: 0}
+    m_Center: {x: 0.22165012, y: -1.8515, z: 0}
+    m_Extent: {x: 4.18435, y: 3.9515, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6602,8 +6607,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.396451, y: -9.0238, z: 0}
-    m_Extent: {x: 32.37015, y: 23.014801, z: 0}
+    m_Center: {x: -2.38865, y: -9.02355, z: 0}
+    m_Extent: {x: 32.36595, y: 23.000349, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
