@@ -52,6 +52,8 @@ public class MainMenu : MonoBehaviour
         _audioManager.Play("Menu");
         _audioManager.Stop("MusicMenu");
         StartCoroutine(LoadNextScene());
+        // animator.Play("throw");
+
     }
 
 
@@ -61,6 +63,7 @@ public class MainMenu : MonoBehaviour
         _audioManager.Play("Level1");
         SceneManager.LoadScene("Map 1");
     }
+    
 
     private void OnEnable() {
         _inputManager.Enable();
@@ -68,5 +71,15 @@ public class MainMenu : MonoBehaviour
 
     private void OnDisable() {
         _inputManager.Disable();
+    }
+
+    public void waitBackgroundAnim()
+    {
+        
+        // animator.SetBool(IsPlay, true);
+        // animator.SetBool("IsPlay", true);
+        // _audioManager.Play("Level1");
+        // SceneManager.LoadScene("Map 1");
+        // animator.SetBool("IsPlay", true);
     }
 }

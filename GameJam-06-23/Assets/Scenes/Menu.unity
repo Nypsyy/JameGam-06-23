@@ -221,7 +221,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1721000682}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
         m_MethodName: StopCurrentTrack
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -233,7 +233,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1721000682}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
         m_MethodName: NextTrack
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884754105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9e1c364b9cef5a40b018f63ec45a898, type: 3}
   m_Name: 
@@ -1786,6 +1786,7 @@ GameObject:
   - component: {fileID: 2075631288}
   - component: {fileID: 2075631287}
   - component: {fileID: 2075631286}
+  - component: {fileID: 2075631289}
   m_Layer: 5
   m_Name: BGpannel
   m_TagString: Untagged
@@ -1872,6 +1873,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075631284}
   m_CullTransparentMesh: 1
+--- !u!114 &2075631289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075631284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e1c364b9cef5a40b018f63ec45a898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2075631286}
 --- !u!4 &2157513753063254238
 Transform:
   m_ObjectHideFlags: 0
