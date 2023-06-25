@@ -6,7 +6,8 @@ public class BeanAnimation : MonoBehaviour
     private AudioManager _audioManager;
     public Rigidbody2D rb2d;
     public SpriteLibraryAsset[] assets;
-
+    public Material spriteDefault;
+    
     private Animator _animator;
     private SpriteLibrary _spriteLibrary;
 
@@ -67,6 +68,7 @@ public class BeanAnimation : MonoBehaviour
     public void OnDeathAnimation() {
         _audioManager.Play("Explosion");
         _animator.SetBool(Deadge, true);
+        gameObject.GetComponent<SpriteRenderer>().material = spriteDefault;
     }
 
     public void OnWinAnimation() {

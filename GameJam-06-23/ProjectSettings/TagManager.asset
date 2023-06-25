@@ -9,6 +9,7 @@ TagManager:
   - SurfaceGround
   - SpriteMC
   - Flare
+  - MCLight
   layers:
   - Default
   - TransparentFX
