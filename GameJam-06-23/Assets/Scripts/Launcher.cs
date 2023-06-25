@@ -20,6 +20,9 @@ public class Launcher : MonoBehaviour
 
     [SerializeField]
     private int trajectoryStepCount = 15;
+   
+    [SerializeField]
+    private float gravityFactor = 0.9f;
 
     private GameObject _flare;
 
@@ -83,7 +86,7 @@ public class Launcher : MonoBehaviour
         var positions = new Vector3[trajectoryStepCount];
         for (var i = 0; i < trajectoryStepCount; i++) {
             var t = i * trajectoryTimeStep;
-            Vector3 pos = (Vector2)spawnPoint.position + _velocity * t + Physics2D.gravity * (0.5f * t * t);
+            Vector3 pos = (Vector2)spawnPoint.position + _velocity * t + Physics2D.gravity * (gravityFactor * t * t);
 
             positions[i] = pos;
         }

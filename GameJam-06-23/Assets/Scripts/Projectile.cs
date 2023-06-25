@@ -13,6 +13,8 @@ public class Projectile : MonoBehaviour
     private CameraControls _cameraControls;
     private BeanMovement _beanMovement;
     public UnityEvent destroyFlare;
+    private bool destroyed;
+    private float flipvalue;
 
     private void Start() {
         _collider2D = GetComponent<PolygonCollider2D>();
@@ -22,16 +24,24 @@ public class Projectile : MonoBehaviour
             _isObjectCreated = true;
         }
 
+        if (_beanMovement._isFlipped == false ) {
+            flipvalue = 0.5f;
+        }
+        else
+        {
+            flipvalue = -0.5f;
+        }
+
+        _rb.AddTorque(flipvalue, ForceMode2D.Impulse);
+
         _flare = GameObject.FindGameObjectWithTag("Flare");
     }
 
     private void Update() {
-        var velocity = _rb.velocity;
-        var angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        if (_rb.velocity.magnitude < 0.05) {
-            Invoke("DestroyFlare", 5);
+        if (_rb.velocity.magnitude < 0.05 && destroyed == false) {
+            Invoke("DestroyFlare", 2);
+            destroyed = true;
         }
     }
 
@@ -49,7 +59,8 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         Debug.Log("Collision");
-        if (collision.gameObject.CompareTag("Ground")) {
+        if (collision.gameObject.CompareTag("Finish")) {
+            Debug.Log("Mat inerte");
             _collider2D.sharedMaterial = inert;
         }
     }
