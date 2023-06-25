@@ -14,12 +14,14 @@ public class BeanMovement : MonoBehaviour
     public UnityEvent onFallEvent;
     public UnityEvent onJumpEvent;
     public UnityEvent onThrowEvent;
+    public UnityEvent onLaunchEvent;
 
     private Rigidbody2D _rb2d;
     private InputManager _inputManager;
     private Vector2 _moveVector;
     private float _inputMove;
     private bool _isJumping;
+    private bool _isThrowing;
     private bool _isGrounded;
     private bool _isFlipped;
 
@@ -38,6 +40,10 @@ public class BeanMovement : MonoBehaviour
     public void OnThrow() {
         _rb2d.simulated = false;
     }
+    
+    public void OnLaunch() {
+        _rb2d.simulated = false;
+    }
 
     public void OnDeath() {
         var light2D = GetComponentInChildren<Light2D>();
@@ -47,7 +53,7 @@ public class BeanMovement : MonoBehaviour
     }
 
     public void DisableInputs() {
-        _inputManager.Disable();
+        _inputManager.Disable();    
     }
 
     private void StartJump() {
@@ -70,8 +76,18 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void TryThrow() {
-        if (_isGrounded) {
+        if (_isGrounded)
+        {
+            _isThrowing = true;
             onThrowEvent.Invoke();
+        }
+    }
+    
+    
+    private void Throw() {
+        if (_isGrounded && _isThrowing) {
+            onLaunchEvent.Invoke();
+            _isThrowing = false;
         }
     }
 
@@ -83,7 +99,14 @@ public class BeanMovement : MonoBehaviour
         _inputManager.Player.LongJump.started += _ => StartJump();
         _inputManager.Player.LongJump.performed += _ => _isJumping = false;
         _inputManager.Player.LongJump.canceled += _ => _isJumping = false;
-        _inputManager.Player.Throw.performed += _ => TryThrow();
+        _inputManager.Player.Throw.performed += _ =>
+        {
+            TryThrow();
+        };
+        _inputManager.Player.Throw.canceled += _ =>
+        {
+            Throw();
+        };
         _inputManager.Player.Move.performed += context => _inputMove = context.ReadValue<float>();
         _inputManager.Player.Move.canceled += _ => _inputMove = 0f;
 
@@ -92,6 +115,7 @@ public class BeanMovement : MonoBehaviour
         onFallEvent ??= new UnityEvent();
         onJumpEvent ??= new UnityEvent();
         onThrowEvent ??= new UnityEvent();
+        onLaunchEvent ??= new UnityEvent();
     }
 
     private void Update() {
@@ -101,7 +125,6 @@ public class BeanMovement : MonoBehaviour
     private void FixedUpdate() {
         // If we jump, we get a constant velocity. Use physics otherwise
         _moveVector.y = _isJumping ? jumpForce : _rb2d.velocity.y;
-
         // If grounded, constant velocity
         if (_isGrounded) {
             _moveVector.x = horizontalSpeed * _inputMove;
@@ -131,7 +154,7 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void OnCollisionExit2D(Collision2D other) {
-        if (!other.collider.CompareTag("Ground"))
+        if (!other.collider.CompareTag("Ground") || _isThrowing)
             return;
 
         if (_isJumping) {

@@ -22,12 +22,15 @@ public class BeanAnimation : MonoBehaviour
     private static readonly int AnimatorSpeed = Animator.StringToHash("Speed");
     private static readonly int AnimatorWin = Animator.StringToHash("Win");
     private static readonly int AnimatorIsThrowing = Animator.StringToHash("IsThrowing");
+    private static readonly int AnimatorIsLaunching = Animator.StringToHash("IsLaunching");
     private static readonly int Deadge = Animator.StringToHash("Deadge");
 
     public void OnJumpAnimation() {
         _animator.SetBool(AnimatorIsJumping, true);
         _animator.SetBool(AnimatorIsFalling, false);
     }
+    
+    
 
     private void Awake() {
         _audioManager = FindObjectOfType<AudioManager>();
@@ -77,8 +80,13 @@ public class BeanAnimation : MonoBehaviour
     }
 
     public void OnThrowAnimation() {
-        _audioManager.Play("Throw");
         _animator.SetBool(AnimatorIsThrowing, true);
+    }
+    
+    public void OnLaunchAnimation() {
+        _audioManager.Play("Throw");
+        _animator.SetBool(AnimatorIsThrowing, false);
+        _animator.SetBool(AnimatorIsLaunching, true);
     }
 
     public void UpdateBeanState() {
@@ -87,5 +95,14 @@ public class BeanAnimation : MonoBehaviour
         }
 
         _spriteLibrary.spriteLibraryAsset = assets[_beanStateIndex];
+    }
+
+
+    public void HandlerEvent(string name)
+    {
+        if (name == "launch")
+        {
+            _animator.SetBool(AnimatorIsLaunching, false);
+        }
     }
 }

@@ -1,0 +1,668 @@
+fileFormatVersion: 2
+guid: aa81b1d0bb650364e853251f426940ef
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Menu BG animation_Frame_0
+    originalName: 
+    pivot: {x: 0.30012006, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1698
+      y: 712
+      width: 833
+      height: 700
+    spriteID: 13c3e5f48ae735a41bca3620bcdb17a8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1698, y: 712}
+  - name: Menu BG animation_Frame_1
+    originalName: 
+    pivot: {x: 0.3510896, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1686
+      y: 2128
+      width: 826
+      height: 700
+    spriteID: 77aefc415dd11e349943ab5adde655a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1686, y: 2128}
+  - name: Menu BG animation_Frame_2
+    originalName: 
+    pivot: {x: 0.30012006, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2539
+      y: 712
+      width: 833
+      height: 700
+    spriteID: 056104c62c34a88459997e044dbedfde
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2539, y: 712}
+  - name: Menu BG animation_Frame_3
+    originalName: 
+    pivot: {x: 0.30012006, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1420
+      width: 833
+      height: 700
+    spriteID: 8de36bfc3d40d8142b4258749cf12b1f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1420}
+  - name: Menu BG animation_Frame_4
+    originalName: 
+    pivot: {x: 0.30012006, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 845
+      y: 1420
+      width: 833
+      height: 700
+    spriteID: e4be09a40e8f727478efb23bdb1be89d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 845, y: 1420}
+  - name: Menu BG animation_Frame_5
+    originalName: 
+    pivot: {x: 0.3329298, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2520
+      y: 2128
+      width: 826
+      height: 700
+    spriteID: 5e13bde4e8cebb04087eeb609506a716
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2520, y: 2128}
+  - name: Menu BG animation_Frame_6
+    originalName: 
+    pivot: {x: 0.3329298, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2836
+      width: 826
+      height: 700
+    spriteID: aeaf95c5e4c9da24082a5c6cb01b7d34
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2836}
+  - name: Menu BG animation_Frame_7
+    originalName: 
+    pivot: {x: 0.3329298, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 838
+      y: 2836
+      width: 826
+      height: 700
+    spriteID: b5b9305ea8f1c3240b995ed55583b323
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 838, y: 2836}
+  - name: Menu BG animation_Frame_8
+    originalName: 
+    pivot: {x: 0.3329298, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1672
+      y: 2836
+      width: 826
+      height: 700
+    spriteID: f244f215412843a49835ac2a6f13429c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1672, y: 2836}
+  - name: Menu BG animation_Frame_9
+    originalName: 
+    pivot: {x: 0.7027348, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 859
+      y: 4
+      width: 841
+      height: 700
+    spriteID: d08b1cc3821c96e48ab4743ba747f4f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 859, y: 4}
+  - name: Menu BG animation_Frame_10
+    originalName: 
+    pivot: {x: 0.30012006, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1686
+      y: 1420
+      width: 833
+      height: 700
+    spriteID: 1d1546ac844a53f458b592fd68fb8b36
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1686, y: 1420}
+  - name: Menu BG animation_Frame_11
+    originalName: 
+    pivot: {x: 0.30012006, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2527
+      y: 1420
+      width: 833
+      height: 700
+    spriteID: 30f369bcfe794f345859dc915f360c96
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2527, y: 1420}
+  - name: Menu BG animation_Frame_12
+    originalName: 
+    pivot: {x: 0.30012006, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2128
+      width: 833
+      height: 700
+    spriteID: 84d2b391cab2bb74da84d3e2ef64e9e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2128}
+  - name: Menu BG animation_Frame_13
+    originalName: 
+    pivot: {x: 0.7020262, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1708
+      y: 4
+      width: 839
+      height: 700
+    spriteID: 25db3d53615b80c4ba858af4b513525e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1708, y: 4}
+  - name: Menu BG animation_Frame_14
+    originalName: 
+    pivot: {x: 0.7020262, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2555
+      y: 4
+      width: 839
+      height: 700
+    spriteID: cf55fc3c748156f45b8ad859e23297c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2555, y: 4}
+  - name: Menu BG animation_Frame_15
+    originalName: 
+    pivot: {x: 0.7020262, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 712
+      width: 839
+      height: 700
+    spriteID: 525861bb569456b469451587684ce6c1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 712}
+  - name: Menu BG animation_Frame_16
+    originalName: 
+    pivot: {x: 0.7020262, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 851
+      y: 712
+      width: 839
+      height: 700
+    spriteID: f71c1cfc0642a2c4881a74e82d9e4a30
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 851, y: 712}
+  - name: Menu BG animation_Frame_17
+    originalName: 
+    pivot: {x: 0.70484066, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 847
+      height: 700
+    spriteID: 57b0099d690b47749befbffa06bd2921
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Menu BG animation_Frame_18
+    originalName: 
+    pivot: {x: 0.30012006, y: 0.28285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 845
+      y: 2128
+      width: 833
+      height: 700
+    spriteID: fa15bfa97c17d30408c3b8fc05a2bc62
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 845, y: 2128}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 984397522
+    name: Menu BG animation
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Menu BG animation_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: -198
+        width: 833
+        height: 700
+      spriteId: 13c3e5f48ae735a41bca3620bcdb17a8
+    - name: Menu BG animation_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: -40
+        y: -198
+        width: 826
+        height: 700
+      spriteId: 77aefc415dd11e349943ab5adde655a0
+    - name: Menu BG animation_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: -198
+        width: 833
+        height: 700
+      spriteId: 056104c62c34a88459997e044dbedfde
+    - name: Menu BG animation_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: -198
+        width: 833
+        height: 700
+      spriteId: 8de36bfc3d40d8142b4258749cf12b1f
+    - name: Menu BG animation_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: -198
+        width: 833
+        height: 700
+      spriteId: e4be09a40e8f727478efb23bdb1be89d
+    - name: Menu BG animation_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: -25
+        y: -198
+        width: 826
+        height: 700
+      spriteId: 5e13bde4e8cebb04087eeb609506a716
+    - name: Menu BG animation_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: -25
+        y: -198
+        width: 826
+        height: 700
+      spriteId: aeaf95c5e4c9da24082a5c6cb01b7d34
+    - name: Menu BG animation_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: -25
+        y: -198
+        width: 826
+        height: 700
+      spriteId: b5b9305ea8f1c3240b995ed55583b323
+    - name: Menu BG animation_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: -25
+        y: -198
+        width: 826
+        height: 700
+      spriteId: f244f215412843a49835ac2a6f13429c
+    - name: Menu BG animation_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: -341
+        y: -198
+        width: 841
+        height: 700
+      spriteId: d08b1cc3821c96e48ab4743ba747f4f0
+    - name: Menu BG animation_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 0
+        y: -198
+        width: 833
+        height: 700
+      spriteId: 1d1546ac844a53f458b592fd68fb8b36
+    - name: Menu BG animation_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 0
+        y: -198
+        width: 833
+        height: 700
+      spriteId: 30f369bcfe794f345859dc915f360c96
+    - name: Menu BG animation_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 0
+        y: -198
+        width: 833
+        height: 700
+      spriteId: 84d2b391cab2bb74da84d3e2ef64e9e8
+    - name: Menu BG animation_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: -339
+        y: -198
+        width: 839
+        height: 700
+      spriteId: 25db3d53615b80c4ba858af4b513525e
+    - name: Menu BG animation_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: -339
+        y: -198
+        width: 839
+        height: 700
+      spriteId: cf55fc3c748156f45b8ad859e23297c4
+    - name: Menu BG animation_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: -339
+        y: -198
+        width: 839
+        height: 700
+      spriteId: 525861bb569456b469451587684ce6c1
+    - name: Menu BG animation_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: -339
+        y: -198
+        width: 839
+        height: 700
+      spriteId: f71c1cfc0642a2c4881a74e82d9e4a30
+    - name: Menu BG animation_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: -347
+        y: -198
+        width: 847
+        height: 700
+      spriteId: 57b0099d690b47749befbffa06bd2921
+    - name: Menu BG animation_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 0
+        y: -198
+        width: 833
+        height: 700
+      spriteId: fa15bfa97c17d30408c3b8fc05a2bc62
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 500, y: 502}
