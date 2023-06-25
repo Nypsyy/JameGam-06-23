@@ -56,6 +56,10 @@ public class BeanMovement : MonoBehaviour
     public void DisableInputs() {
         _inputManager.Disable();
     }
+    public void EnableInputs()
+    {
+        _inputManager.Enable();
+    }
 
     private void StartJump() {
         if (!_isGrounded)
@@ -78,6 +82,8 @@ public class BeanMovement : MonoBehaviour
 
     private void TryThrow() {
         if (_isGrounded) {
+        if (_isGrounded && GameObject.FindGameObjectWithTag("Flare") == null)
+        {
             onThrowEvent.Invoke();
         }
     }

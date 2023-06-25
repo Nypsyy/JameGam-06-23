@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Launcher : MonoBehaviour
 {
@@ -26,28 +27,56 @@ public class Launcher : MonoBehaviour
 
     private Vector2 _velocity, _startMousePos, _currentMousePos;
 
+    private bool startThrowing;
+    private bool throwing;
+
     private void Start() {
         lineRenderer.material.SetColor("_Color", Color.yellow);
     }
 
     private void Update() {
         _flare = GameObject.FindGameObjectWithTag("Flare");
-        if (Input.GetMouseButtonDown(0) && _flare == null) {
-            _startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (startThrowing == true)
+        {
+
+            if (Input.GetMouseButtonDown(1) && _flare == null)
+            {
+                _startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            }
+
+            if (Input.GetMouseButton(1) && _flare == null)
+            {
+                _currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                _velocity = (_startMousePos - _currentMousePos) * launchForce;
+
+                DrawTrajectory();
+                RotateLauncher();
+            }
+
         }
 
-        if (Input.GetMouseButton(0) && _flare == null) {
-            _currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            _velocity = (_startMousePos - _currentMousePos) * launchForce;
-
-            DrawTrajectory();
-            RotateLauncher();
+        if (throwing == true)
+        {
+            if (Input.GetMouseButtonUp(1) && _flare == null)
+            {
+                FireProjectile();
+                ClearTrajectory();
+                throwing = false;
+            }
         }
+    }
 
-        if (Input.GetMouseButtonUp(0) && _flare == null) {
-            FireProjectile();
-            ClearTrajectory();
-        }
+    public void SetStartThrowing()
+    {
+        startThrowing = true;
+    }
+
+    public void SetThrowing()
+    {
+        startThrowing = false;
+        throwing = true;
+
     }
 
     private void DrawTrajectory() {
