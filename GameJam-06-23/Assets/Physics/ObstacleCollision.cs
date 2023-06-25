@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class ObstacleCollision : MonoBehaviour
 {
@@ -19,10 +20,17 @@ public class ObstacleCollision : MonoBehaviour
     
     [SerializeField]
     private GameObject light;
+
+
+    [SerializeField]
+    private Animator animator;
+
+
+    public UnityEvent onDeathevent;
     
-    void Start()
+    void Awake()
     {
-        
+        onDeathevent ??= new UnityEvent();
     }
 
     // Update is called once per frame
@@ -35,13 +43,14 @@ public class ObstacleCollision : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             //lancer animation de mort
-            Debug.Log("Censé perdre");
-            //deathCount.addDeath();
+            animator.SetBool("Deadge",true);
             rb.velocity = new Vector2(0f, 0f);
             MC.GetComponent<MCmove>().stopMovement();
             rb.gravityScale  = 0f;
             Destroy(light);
-            MCSprite.GetComponent<Animator>().Play("explode");
+            onDeathevent.Invoke();
+
+           
         }
     }
 

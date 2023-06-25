@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FallingTrigger : MonoBehaviour
 {
@@ -10,11 +11,14 @@ public class FallingTrigger : MonoBehaviour
     [SerializeField]
     private GameObject MC;
 
+    public UnityEvent onFallEvent;
+
     
-    void Start()
+    void Awake()
     {
-        
-    }
+        onFallEvent ??= new UnityEvent();
+    }   
+    
 
     // Update is called once per frame
     void Update()
@@ -25,8 +29,10 @@ public class FallingTrigger : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player"))
         {
-            MC.GetComponent<MCmove>().isFalling = true;
-            MCSprite.GetComponent<Animator>().Play("fall1");
+
+            onFallEvent.Invoke(); 
+            // MC.GetComponent<MCmove>().isFalling = true;
+
         }
     }
 }

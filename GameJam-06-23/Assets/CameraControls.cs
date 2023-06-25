@@ -1,7 +1,9 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Windows.WebCam;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class CameraControls : MonoBehaviour
@@ -9,6 +11,9 @@ public class CameraControls : MonoBehaviour
     public GameObject cameraSurface;
     public GameObject cameraFlare;
     public GameObject cameraMC;
+    public GameObject newFlare;
+    private CinemachineVirtualCamera CVCFlare;
+    private Transform target;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +36,7 @@ public class CameraControls : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Flare"))
         {
+            newFlare = collision.gameObject;
             MoveCameraFlare();
         }
     }
@@ -38,8 +44,11 @@ public class CameraControls : MonoBehaviour
     public void MoveCameraFlare()
     {
         cameraSurface.SetActive(false);
-        cameraFlare.SetActive(true);
         cameraMC.SetActive(false);
+        CVCFlare = cameraFlare.GetComponent<CinemachineVirtualCamera>();
+        target = newFlare.transform;
+        CVCFlare.Follow = target;
+        cameraFlare.SetActive(true);
     }
 
     public void MoveCameraMC()
@@ -47,6 +56,13 @@ public class CameraControls : MonoBehaviour
         cameraSurface.SetActive(false);
         cameraFlare.SetActive(false);
         cameraMC.SetActive(true);
+    }
+
+    public void MoveCameraSurface()
+    {
+        cameraSurface.SetActive(true);
+        cameraFlare.SetActive(false);
+        cameraMC.SetActive(false);
     }
 
 }
