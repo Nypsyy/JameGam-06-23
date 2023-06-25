@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,7 @@ public class MainMenu : MonoBehaviour
 {
 
     private AudioManager _audioManager;
+    public Animator animator;
 
 
     private void Awake() {
@@ -18,10 +20,17 @@ public class MainMenu : MonoBehaviour
     public void LoadGame() {
         _audioManager.Play("Menu");
         _audioManager.Stop("MusicMenu");
-        SceneManager.LoadScene("Map 1");
-        _audioManager.Play("Level1");
-    }
+        StartCoroutine(LoadNextScene(_audioManager,animator));
 
+    }
+    
+    
+    private static IEnumerator LoadNextScene(AudioManager _audioManager,  Animator animator) {
+        animator.SetBool("IsPlay", true);
+        yield return new WaitForSeconds(1.45f);
+        _audioManager.Play("Level1");
+        SceneManager.LoadScene("Map 1");
+    }
 
     public void QuitGame() {
         _audioManager.Play("Menu");

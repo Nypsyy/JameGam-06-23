@@ -24,7 +24,7 @@ public class BeanMovement : MonoBehaviour
     private bool _isJumping;
     private bool _isThrowing;
     private bool _isGrounded;
-    private bool _isFlipped;
+    public bool _isFlipped;
 
     public void OnJump() {
         _isGrounded = false;
