@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
@@ -6,7 +7,6 @@ public class SceneSwitcher : MonoBehaviour
 {
 
     private AudioManager _audioManager;
-
     void Awake() {
         _audioManager = FindObjectOfType<AudioManager>();
     }
@@ -21,15 +21,26 @@ public class SceneSwitcher : MonoBehaviour
     {       
     }
 
-    public void SceneSwitch(string sceneName){
-        SceneManager.LoadScene(sceneName);
+    public void SceneSwitch(){
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        try
+        {
+            
+            SceneManager.LoadScene(currentScene + 1);
+        }
+        catch{}
+        
     }
 
-    public void NextTrack(string NextTrack){
-        _audioManager.Play(NextTrack);
+    public void NextTrack()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        currentScene++;
+        _audioManager?.Play("Level"+ currentScene);
     }
 
-    public void StopCurrentTrack(string CurrentTrack){
-        _audioManager.Stop(CurrentTrack);               
+    public void StopCurrentTrack(){
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        _audioManager?.Stop("Level"+currentScene);               
     }
 }

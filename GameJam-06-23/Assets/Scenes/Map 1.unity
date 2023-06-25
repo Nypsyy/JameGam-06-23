@@ -18482,6 +18482,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9de1f2d3d467246afe0868d1c0f6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+    - target: {fileID: 5777616511813479872, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
 --- !u!1 &2101090271
 GameObject:
   m_ObjectHideFlags: 0
