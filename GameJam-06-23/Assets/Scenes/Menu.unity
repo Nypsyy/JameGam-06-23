@@ -1194,6 +1194,7 @@ MonoBehaviour:
   - {fileID: 692740928}
   - {fileID: 1753861252}
   - {fileID: 1112075547}
+  levelData: {fileID: 11400000, guid: f7829106e2a4bf942923992c143c3592, type: 2}
 --- !u!1 &889633438
 GameObject:
   m_ObjectHideFlags: 0
