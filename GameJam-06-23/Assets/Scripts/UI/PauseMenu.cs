@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject commandsUI2;
     public GameObject commandsUI3;
     public GameObject tutorialUI;
+    public GameObject tutorialUI2;
+    public GameObject tutorialUI3;
     public BeanMovement beanMovement;
     public LevelData levelData;
 
@@ -33,11 +35,14 @@ public class PauseMenu : MonoBehaviour
     }
 
     private void ManagePause() {
-        if (_isPaused && !tutorialUI.activeSelf) {
+        if (_isPaused) {
+            if (tutorialUI.activeSelf || tutorialUI2.activeSelf || tutorialUI3.activeSelf)
+                return;
+            
             if (pauseMenuUI.activeSelf) {
                 ResumeGame();
             }
-            else if (commandsUI.activeSelf || commandsUI2.activeSelf || commandsUI3) {
+            else if (commandsUI.activeSelf || commandsUI2.activeSelf || commandsUI3.activeSelf) {
                 HideCommands();
             }
         }
@@ -88,6 +93,8 @@ public class PauseMenu : MonoBehaviour
 
     private void ShowTutorial() {
         Time.timeScale = 0f;
+        _isPaused = true;
+        Debug.Log(_isPaused);
         tutorialUI.SetActive(true);
     }
 

@@ -19,12 +19,4 @@ public class Tutorial : MonoBehaviour
     private void OnEnable() {
         beanMovement.DisableInputs();
     }
-
-    private void Update() {
-        if (Input.anyKey) {
-            onCloseTutorialEvent.Invoke();
-        }
-    }
-
-
 }
