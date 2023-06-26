@@ -7,12 +7,20 @@ public class Projectile : MonoBehaviour
     private BeanMovement _beanMovement;
     private bool _destroyed;
     private float _torqueValue;
+    public bool alreadyJumped;
 
     private static Projectile _instance;
 
     private void DestroyFlare() {
         Destroy(gameObject);
         _cameraControls.MoveCameraSurface();
+        _beanMovement.EnableInputs();
+    }
+
+    private void DestroyFlareAfterJump()
+    {
+        Destroy(gameObject);
+        _cameraControls.MoveCameraMC();
         _beanMovement.EnableInputs();
     }
 
@@ -25,9 +33,9 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         _cameraControls = FindObjectOfType<CameraControls>();
         _beanMovement = FindObjectOfType<BeanMovement>();
+        alreadyJumped = _cameraControls.falled;
     }
 
     private void Start() {
@@ -39,9 +47,16 @@ public class Projectile : MonoBehaviour
     private void Update() {
         if (!(_rb.velocity.magnitude < .05f) || _destroyed)
             return;
+        if(!alreadyJumped)
+        {
+            Invoke(nameof(DestroyFlare), 2f);
+            _destroyed = true;
+        }
+        else {
+            Invoke(nameof(DestroyFlareAfterJump), 2f);
+            _destroyed = true;
+        }    
 
-        Invoke(nameof(DestroyFlare), 2f);
-        _destroyed = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
