@@ -594,8 +594,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.4498999, y: -0.9081999, z: 0}
-    m_Extent: {x: 4.7005997, y: 3.5457, z: 0}
+    m_Center: {x: -0.45860004, y: -0.9124501, z: 0}
+    m_Extent: {x: 4.6994, y: 3.5550501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 8.1
@@ -639,6 +639,17 @@ MonoBehaviour:
   - {x: -3.265491, y: 0.6011346, z: 0}
   - {x: -3.4702177, y: 0.41069353, z: 0}
   - {x: -3.5168529, y: 0.10387079, z: 0}
+--- !u!114 &59760184 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7512576393593550820, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
+  m_PrefabInstance: {fileID: 2091317814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50705c1d7e213614385d0c49a7d16516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &62328657
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,8 +2985,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.26254988, y: 0.06339991, z: 0}
-    m_Extent: {x: 4.15905, y: 2.5770001, z: 0}
+    m_Center: {x: 0.26284993, y: 0.06435001, z: 0}
+    m_Extent: {x: 4.16405, y: 2.5771499, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -17208,7 +17219,7 @@ PrefabInstance:
     - target: {fileID: 6389310166782642182, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
       propertyPath: onThrowEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 2062503825}
+      objectReference: {fileID: 59760184}
     - target: {fileID: 6389310166782642182, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
       propertyPath: onLaunchEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -17219,11 +17230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6389310166782642182, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
       propertyPath: onThrowEvent.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: DisableInputs
+      value: FireProjectile
       objectReference: {fileID: 0}
     - target: {fileID: 6389310166782642182, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
       propertyPath: onThrowEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: BeanMovement, Assembly-CSharp
+      value: Launcher, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6389310166782642182, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
       propertyPath: onThrowEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName

@@ -11,8 +11,11 @@ public class BeanMovement : MonoBehaviour
     public float horizontalAcceleration = 2f;
     public float maxFallSpeed = 25f;
     public float drag = 10f;
-    public LevelData levelData;
 
+    [HideInInspector]
+    public bool isFlipped;
+
+    public LevelData levelData;
     public UnityEvent onLandEvent;
     public UnityEvent onFallEvent;
     public UnityEvent onJumpEvent;
@@ -26,7 +29,6 @@ public class BeanMovement : MonoBehaviour
     private bool _isJumping;
     private bool _isThrowing;
     private bool _isGrounded;
-    public bool isFlipped;
 
     public void OnJump() {
         _isGrounded = false;
