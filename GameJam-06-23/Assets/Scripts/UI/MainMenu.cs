@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject optionsUI;
     public GameObject levelsUI;
     public GameObject[] levelButtons;
+    public LevelData levelData;
 
     private AudioManager _audioManager;
     private InputManager _inputManager;
@@ -48,13 +49,18 @@ public class MainMenu : MonoBehaviour
     }
 
     public void ShowLevelButtons() {
-        for (var index = 0; index <= _completed; index++) {
+        for (var index = 0; index < _completed; index++) {
             levelButtons[index].SetActive(true);
         }
     }
 
     public void QuitGame() {
         _audioManager.Play(SelectButtonSound);
+        levelData.showTutorial = true;
+        levelData.isMusicPlaying = false;
+        if (Application.isEditor) {
+            PlayerPrefs.SetInt(CompletedPref, 1);
+        }
         Application.Quit();
     }
 

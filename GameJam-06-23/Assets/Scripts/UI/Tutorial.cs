@@ -1,19 +1,12 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Tutorial : MonoBehaviour
 {
     public BeanMovement beanMovement;
-    public UnityEvent onCloseTutorialEvent;
 
-    
-    public void HideTutorial() {
+    public void HideTutorial(GameObject obj) {
         Time.timeScale = 1f;
-        gameObject.SetActive(false);
-    }
-
-    private void Awake() {
-        onCloseTutorialEvent ??= new UnityEvent();
+        obj.SetActive(false);
     }
 
     private void OnEnable() {

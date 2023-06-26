@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d240d02baf1a6e948a18b6a2314c331a, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  showTutorial: 1
-  isMusicPlaying: 0
+  showTutorial: 0
+  isMusicPlaying: 1

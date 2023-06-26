@@ -6,7 +6,7 @@ public class Win : MonoBehaviour
 {
     public UnityEvent onWinEvent;
 
-    private const string CompletedPref = "Complete";
+    private const string CompletedPref = "Completed";
 
     private void Awake() {
         onWinEvent ??= new UnityEvent();
