@@ -2,32 +2,18 @@ using UnityEngine;
 
 public class Launcher : MonoBehaviour
 {
-    [SerializeField]
-    private Transform projectilePrefab;
+    public GameObject projectilePrefab;
+    public Transform spawnPoint;
+    public LineRenderer lineRenderer;
+    public float launchForce = 1.5f;
+    public float trajectoryTimeStep = 0.05f;
+    public int trajectoryStepCount = 15;
+    public float gravityFactor = 0.9f;
 
-    [SerializeField]
-    private Transform spawnPoint;
-
-    [SerializeField]
-    private LineRenderer lineRenderer;
-
-    [SerializeField]
-    private float launchForce = 1.5f;
-
-    [SerializeField]
-    private float trajectoryTimeStep = 0.05f;
-
-    [SerializeField]
-    private int trajectoryStepCount = 15;
-
-    [SerializeField]
-    private float gravityFactor = 0.9f;
-
-    private GameObject _flare;
+    private GameObject _beanProjectile;
     private Vector2 _velocity, _startMousePos, _currentMousePos;
     private bool _startThrowing;
-    private bool _throwing;
-    
+
     private static readonly int MaterialColor = Shader.PropertyToID("_Color");
 
     private void Start() {
@@ -35,37 +21,24 @@ public class Launcher : MonoBehaviour
     }
 
     private void Update() {
-        _flare = GameObject.FindGameObjectWithTag("Flare");
+        if (!_startThrowing) return;
+        _currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        _velocity = (_startMousePos - _currentMousePos) * launchForce;
 
-        if (_startThrowing) {
-            if (Input.GetMouseButtonDown(0) && _flare == null) {
-                _startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            }
+        DrawTrajectory();
+        RotateLauncher();
+    }
 
-            if (Input.GetMouseButton(0) && _flare == null) {
-                _currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                _velocity = (_startMousePos - _currentMousePos) * launchForce;
+    public void StartThrowingProjectile() {
+        _startThrowing = true;
+        if (Camera.main != null)
+            _startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
 
-                DrawTrajectory();
-                RotateLauncher();
-            }
-        }
-
-        if (!_throwing || _flare != null)
-            return;
-        
+    public void ThrowProjectile() {
+        _startThrowing = false;
         FireProjectile();
         ClearTrajectory();
-        _throwing = false;
-    }
-
-    public void SetStartThrowing() {
-        _startThrowing = true;
-    }
-
-    public void SetThrowing() {
-        _startThrowing = false;
-        _throwing = true;
     }
 
     private void DrawTrajectory() {
@@ -82,8 +55,8 @@ public class Launcher : MonoBehaviour
     }
 
     private void FireProjectile() {
-        var pr = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
-        pr.GetComponent<Rigidbody2D>().velocity = _velocity;
+        var beanProjectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
+        beanProjectile.GetComponent<Rigidbody2D>().velocity = _velocity;
     }
 
     private void RotateLauncher() {

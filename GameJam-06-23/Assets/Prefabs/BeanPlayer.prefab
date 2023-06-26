@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50705c1d7e213614385d0c49a7d16516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 4331968337474090010, guid: c8f8ac80b6230674cba09b72ace7b4b1, type: 3}
+  projectilePrefab: {fileID: 4417772468823461710, guid: c8f8ac80b6230674cba09b72ace7b4b1, type: 3}
   spawnPoint: {fileID: 448029280856754241}
   lineRenderer: {fileID: 2712710133058389997}
   launchForce: 1.5
@@ -344,6 +344,7 @@ MonoBehaviour:
   horizontalAcceleration: 1
   maxFallSpeed: 25
   drag: 0.15
+  isFlipped: 0
   levelData: {fileID: 11400000, guid: f7829106e2a4bf942923992c143c3592, type: 2}
   onLandEvent:
     m_PersistentCalls:
@@ -443,7 +444,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7512576393593550820}
         m_TargetAssemblyTypeName: Launcher, Assembly-CSharp
-        m_MethodName: SetStartThrowing
+        m_MethodName: StartThrowingProjectile
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -482,7 +483,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7512576393593550820}
         m_TargetAssemblyTypeName: Launcher, Assembly-CSharp
-        m_MethodName: SetThrowing
+        m_MethodName: ThrowProjectile
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -492,19 +493,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LightManager, Assembly-CSharp
-        m_MethodName: DecreasePlayerLight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  isFlipped: 0
 --- !u!1 &4303996061232136150
 GameObject:
   m_ObjectHideFlags: 0
