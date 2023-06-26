@@ -6,8 +6,8 @@ public class Tutorial : MonoBehaviour
     public BeanMovement beanMovement;
     public UnityEvent onCloseTutorialEvent;
 
+    
     public void HideTutorial() {
-        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
@@ -24,4 +24,6 @@ public class Tutorial : MonoBehaviour
             onCloseTutorialEvent.Invoke();
         }
     }
+
+
 }

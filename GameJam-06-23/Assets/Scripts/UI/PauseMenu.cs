@@ -6,6 +6,8 @@ public class PauseMenu : MonoBehaviour
     private AudioManager _audioManager;
     public GameObject pauseMenuUI;
     public GameObject commandsUI;
+    public GameObject commandsUI2;
+    public GameObject commandsUI3;
     public GameObject tutorialUI;
     public LevelData levelData;
 
@@ -36,9 +38,10 @@ public class PauseMenu : MonoBehaviour
             if (pauseMenuUI.activeSelf) {
                 ResumeGame();
             }
-            else if (commandsUI.activeSelf) {
+            else if (commandsUI.activeSelf|| commandsUI2.activeSelf||commandsUI3) {
                 HideCommands();
             }
+
         }
         else {
             PauseGame();
@@ -79,6 +82,9 @@ public class PauseMenu : MonoBehaviour
         _audioManager.Play(SelectButtonSound);
         pauseMenuUI.SetActive(true);
         commandsUI.SetActive(false);
+        commandsUI2.SetActive(false);
+        commandsUI3.SetActive(false);
+        
     }
 
     private void ShowTutorial() {
@@ -93,4 +99,10 @@ public class PauseMenu : MonoBehaviour
     private void OnDisable() {
         _inputManager.Disable();
     }
+
+    public void DisableInput()
+    {
+        _inputManager.Disable();
+    }
+    
 }

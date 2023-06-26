@@ -594,8 +594,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.4554999, y: -0.9124, z: 0}
-    m_Extent: {x: 4.6983004, y: 3.5487, z: 0}
+    m_Center: {x: -0.4498999, y: -0.9081999, z: 0}
+    m_Extent: {x: 4.7005997, y: 3.5457, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 8.1
@@ -2974,8 +2974,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.26480007, y: 0.058050036, z: 0}
-    m_Extent: {x: 4.1633, y: 2.5764499, z: 0}
+    m_Center: {x: 0.26254988, y: 0.06339991, z: 0}
+    m_Extent: {x: 4.15905, y: 2.5770001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3112,6 +3112,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1038094320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9157513981357930944, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+  m_PrefabInstance: {fileID: 2098154013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8212581e7aae159478f03437c0231850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1065131090
 GameObject:
   m_ObjectHideFlags: 0
@@ -16006,6 +16017,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2098154014}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: DisableInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1544073189
 GameObject:
   m_ObjectHideFlags: 0
@@ -17237,6 +17260,30 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1936145985608237566, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: beanMovement
+      value: 
+      objectReference: {fileID: 2062503825}
+    - target: {fileID: 1936145985608237566, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: onCloseTutorialEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936145985608237566, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: onCloseTutorialEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2062503825}
+    - target: {fileID: 1936145985608237566, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: onCloseTutorialEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnableInputs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936145985608237566, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: onCloseTutorialEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BeanMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936145985608237566, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: onCloseTutorialEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2427348537563881067, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -17329,6 +17376,26 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5867969142277976294, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2062503825}
+    - target: {fileID: 5867969142277976294, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnableInputs
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867969142277976294, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BeanMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867969142277976294, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488107955429264499, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: beanMovement
+      value: 
+      objectReference: {fileID: 2062503825}
     - target: {fileID: 9157513981357930944, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: beanMovement
       value: 
@@ -17336,13 +17403,24 @@ PrefabInstance:
     - target: {fileID: 9157513981357930944, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: onCloseTutorialEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2062503825}
+      objectReference: {fileID: 1038094320}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7683958705164141287, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+--- !u!114 &2098154014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4268135297856877560, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+  m_PrefabInstance: {fileID: 2098154013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f558757500d01d04ebdfa30fd5e1b6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2101090271
 GameObject:
   m_ObjectHideFlags: 0

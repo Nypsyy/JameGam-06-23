@@ -2542,6 +2542,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1936145985608237566, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: beanMovement
+      value: 
+      objectReference: {fileID: 1427202385}
     - target: {fileID: 3385736123308563357, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2626,10 +2630,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5867969142277976294, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1427202385}
+    - target: {fileID: 5867969142277976294, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnableInputs
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867969142277976294, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BeanMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867969142277976294, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6818563062107837417, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7488107955429264499, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: beanMovement
+      value: 
+      objectReference: {fileID: 1427202385}
     - target: {fileID: 7914206610890992553, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -2655,6 +2679,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+--- !u!114 &196294396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4268135297856877560, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+  m_PrefabInstance: {fileID: 196294395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f558757500d01d04ebdfa30fd5e1b6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &196294401 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5007889827599570874, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
@@ -5971,8 +6006,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.2270999, y: -1.8422499, z: 0}
-    m_Extent: {x: 4.1818, y: 3.95045, z: 0}
+    m_Center: {x: 0.22889996, y: -1.8472499, z: 0}
+    m_Extent: {x: 4.1839, y: 3.9535499, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6206,8 +6241,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.3886003, y: -9.0271, z: 0}
-    m_Extent: {x: 32.3641, y: 23.006, z: 0}
+    m_Center: {x: -2.38935, y: -9.030899, z: 0}
+    m_Extent: {x: 32.36355, y: 23.0052, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -80301,6 +80336,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1656504349}
         m_TargetAssemblyTypeName: Win, Assembly-CSharp
         m_MethodName: UpdateCompletedLevels
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 196294396}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: DisableInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
