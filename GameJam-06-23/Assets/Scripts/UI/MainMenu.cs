@@ -4,12 +4,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public Animator animator;
     public GameObject mainUI;
     public GameObject optionsUI;
+    private int completed;
+    public GameObject[] levelButtons;
 
     private AudioManager _audioManager;
     private InputManager _inputManager;
@@ -32,6 +35,14 @@ public class MainMenu : MonoBehaviour
         optionsUI.SetActive(false);
     }
 
+    public void ShowLevelButtons()
+    {
+        for (int i = 0; i < completed; i++)
+        {
+            levelButtons[i].SetActive(true);
+        }
+    }
+
     public void QuitGame() {
         _audioManager.Play("Menu");
         Application.Quit();
@@ -45,6 +56,7 @@ public class MainMenu : MonoBehaviour
     }
 
     private void Start() {
+        completed = PlayerPrefs.GetInt("Completed", 1);
         _audioManager.Play("Level0");
     }
 
@@ -56,12 +68,42 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void LoadMap2() {
+        _audioManager.Play("Menu");
+        _audioManager.Stop("MusicMenu");
+        StartCoroutine(Map2());
+        // animator.Play("throw");
+
+    }
+
+    public void LoadMap3() {
+        _audioManager.Play("Menu");
+        _audioManager.Stop("MusicMenu");
+        StartCoroutine(Map3());
+        // animator.Play("throw");
+
+    }
+
 
     private IEnumerator LoadNextScene() {
         animator.SetBool(IsPlay, true);
         yield return _wait;
         _audioManager.Play("Level1");
         SceneManager.LoadScene("Map 1");
+    }
+
+    private IEnumerator Map2() {
+        animator.SetBool(IsPlay, true);
+        yield return _wait;
+        _audioManager.Play("Level2");
+        SceneManager.LoadScene("Map 2");
+    }
+
+    private IEnumerator Map3() {
+        animator.SetBool(IsPlay, true);
+        yield return _wait;
+        _audioManager.Play("Level3");
+        SceneManager.LoadScene("Map3");
     }
     
 

@@ -594,8 +594,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.4541998, y: -0.9179001, z: 0}
-    m_Extent: {x: 4.7082, y: 3.5552, z: 0}
+    m_Center: {x: -0.4591, y: -0.9114499, z: 0}
+    m_Extent: {x: 4.7108, y: 3.54705, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 8.1
@@ -2974,8 +2974,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.25644994, y: 0.061450005, z: 0}
-    m_Extent: {x: 4.1658497, y: 2.57325, z: 0}
+    m_Center: {x: 0.26689994, y: 0.058049917, z: 0}
+    m_Extent: {x: 4.1632, y: 2.57865, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -16000,6 +16000,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1541304818}
+        m_TargetAssemblyTypeName: Win, Assembly-CSharp
+        m_MethodName: UpdateCompletedLevels
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1544073189
 GameObject:
   m_ObjectHideFlags: 0
@@ -17287,7 +17299,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7683958705164141287, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 772438839815698778, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
