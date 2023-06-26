@@ -23,7 +23,29 @@ public class Launcher : MonoBehaviour
     
     
     private void Start() {
-        lineRenderer.material.SetColor(MaterialColor, Color.yellow);
+        //lineRenderer.material.SetColor(MaterialColor, Color.yellow);
+
+        // how to create gradient in script?
+        var gradient = new Gradient();
+
+        gradient.mode = GradientMode.Blend;
+
+        var gradientColorKeys = new GradientColorKey[2]
+        {
+
+            new GradientColorKey(Color.white, .0f),
+            new GradientColorKey(Color.white, .0f)
+        };
+
+        var alphaKeys = new GradientAlphaKey[2]
+        {
+            new GradientAlphaKey(1f, .2f),
+            new GradientAlphaKey(1f, .8f)
+        };
+
+        gradient.SetKeys(gradientColorKeys, alphaKeys);
+
+        lineRenderer.colorGradient = gradient;
     }
 
     private void Update() {
