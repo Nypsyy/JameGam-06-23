@@ -17186,6 +17186,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 772438839815698778, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1556613142830036762, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_Color.a
       value: 0
