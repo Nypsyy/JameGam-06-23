@@ -10,7 +10,6 @@ public class Tutorial2 : MonoBehaviour
 
     
     public void HideTutorial() {
-        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 

@@ -594,8 +594,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.4498999, y: -0.9081999, z: 0}
-    m_Extent: {x: 4.7005997, y: 3.5457, z: 0}
+    m_Center: {x: -0.46354985, y: -0.91824996, z: 0}
+    m_Extent: {x: 4.7063503, y: 3.55155, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 8.1
@@ -2974,8 +2974,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.26254988, y: 0.06339991, z: 0}
-    m_Extent: {x: 4.15905, y: 2.5770001, z: 0}
+    m_Center: {x: 0.2501999, y: 0.06615007, z: 0}
+    m_Extent: {x: 4.1608, y: 2.58505, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -17255,6 +17255,22 @@ PrefabInstance:
     - target: {fileID: 772438839815698778, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452706016030341293, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2062503825}
+    - target: {fileID: 1452706016030341293, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnableInputs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452706016030341293, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BeanMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452706016030341293, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1556613142830036762, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_Color.a
