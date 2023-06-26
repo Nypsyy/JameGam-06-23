@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Launcher : MonoBehaviour
 {
@@ -10,12 +12,16 @@ public class Launcher : MonoBehaviour
     public int trajectoryStepCount = 15;
     public float gravityFactor = 0.9f;
 
-    private GameObject _beanProjectile;
+    public GameObject _beanProjectile;
     private Vector2 _velocity, _startMousePos, _currentMousePos;
     private bool _startThrowing;
-
+    public BeanAnimation beanAnimation;
     private static readonly int MaterialColor = Shader.PropertyToID("_Color");
-
+    public float intensity = 0.25f;
+    public float pointLightOuterRadius = 0.2f;
+    public float pointLightInnerRadius = 0.75f;
+    
+    
     private void Start() {
         lineRenderer.material.SetColor(MaterialColor, Color.yellow);
     }
@@ -30,6 +36,7 @@ public class Launcher : MonoBehaviour
     }
 
     public void StartThrowingProjectile() {
+        
         _startThrowing = true;
         if (Camera.main != null)
             _startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -57,6 +64,10 @@ public class Launcher : MonoBehaviour
     private void FireProjectile() {
         var beanProjectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
         beanProjectile.GetComponent<Rigidbody2D>().velocity = _velocity;
+        var light = beanProjectile.GetComponent<Light2D>();
+        light.intensity -= beanAnimation._currentAssetIndex * intensity;
+        light.pointLightOuterRadius -= beanAnimation._currentAssetIndex * pointLightOuterRadius;
+        light.pointLightInnerRadius -= beanAnimation._currentAssetIndex * pointLightInnerRadius;
     }
 
     private void RotateLauncher() {

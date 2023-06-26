@@ -165,6 +165,11 @@ MonoBehaviour:
   trajectoryTimeStep: 0.05
   trajectoryStepCount: 15
   gravityFactor: 0.9
+  _beanProjectile: {fileID: 0}
+  beanAnimation: {fileID: 581177742440248295}
+  intensity: 0.2
+  pointLightOuterRadius: 0.2
+  pointLightInnerRadius: 0.6
 --- !u!1 &2895318171244681945
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +745,7 @@ MonoBehaviour:
   - {fileID: 7108339969198208228, guid: 4cb5358cfa34b5f42a049e4dcdcfcfb8, type: 3}
   - {fileID: 7108339969198208228, guid: 3dc30a0c702f2a349afdbf077cfc7a63, type: 3}
   spriteDefault: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  _currentAssetIndex: 0
 --- !u!1 &8958455081968205721
 GameObject:
   m_ObjectHideFlags: 0

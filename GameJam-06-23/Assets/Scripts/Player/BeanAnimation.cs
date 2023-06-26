@@ -15,7 +15,7 @@ public class BeanAnimation : MonoBehaviour
     private Vector2 _moveVector;
     private bool _isJumping;
     private bool _isGrounded;
-    private short _currentAssetIndex;
+    public short _currentAssetIndex;
 
     private static readonly int AnimatorIsJumping = Animator.StringToHash("IsJumping");
     private static readonly int AnimatorIsFalling = Animator.StringToHash("IsFalling");
