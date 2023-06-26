@@ -45,6 +45,7 @@ public class BeanMovement : MonoBehaviour
 
     public void OnLaunch() {
         _isThrowing = false;
+        DisableInputs();
     }
 
     public void OnDeath() {

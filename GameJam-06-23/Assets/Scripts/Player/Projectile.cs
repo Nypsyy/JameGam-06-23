@@ -12,7 +12,6 @@ public class Projectile : MonoBehaviour
     private GameObject _flare;
     private CameraControls _cameraControls;
     private BeanMovement _beanMovement;
-    public UnityEvent destroyFlare;
     private bool destroyed;
     private float flipvalue;
 
