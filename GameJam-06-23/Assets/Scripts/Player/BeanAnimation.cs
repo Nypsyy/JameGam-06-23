@@ -68,8 +68,6 @@ public class BeanAnimation : MonoBehaviour
 
         _animator.SetBool(AnimatorIsThrowing, false);
         _animator.SetBool(AnimatorIsLaunching, true);
-        
-
     }
 
     public void StopLaunchAnimation() {
@@ -80,7 +78,7 @@ public class BeanAnimation : MonoBehaviour
 
         _spriteLibrary.spriteLibraryAsset = assets[_currentAssetIndex];
     }
-    
+
     private void Awake() {
         _audioManager = FindObjectOfType<AudioManager>();
         _animator = GetComponent<Animator>();

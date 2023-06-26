@@ -1,67 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
 {
-    private PolygonCollider2D _collider2D;
     private Rigidbody2D _rb;
-    public PhysicsMaterial2D inert;
-    private bool _isObjectCreated;
-    private GameObject _flare;
     private CameraControls _cameraControls;
     private BeanMovement _beanMovement;
-    private bool destroyed;
-    private float flipvalue;
+    private bool _destroyed;
+    private float _torqueValue;
 
-    private void Start() {
-        _collider2D = GetComponent<PolygonCollider2D>();
-        if (!_isObjectCreated) {
-            // Créer l'objet ici
-            _rb = GetComponent<Rigidbody2D>();
-            _isObjectCreated = true;
-        }
+    private static Projectile _instance;
 
-        if (_beanMovement._isFlipped == false ) {
-            flipvalue = 0.5f;
-        }
-        else
-        {
-            flipvalue = -0.5f;
-        }
-
-        _rb.AddTorque(flipvalue, ForceMode2D.Impulse);
-
-        _flare = GameObject.FindGameObjectWithTag("Flare");
-    }
-
-    private void Update() {
-
-        if (_rb.velocity.magnitude < 0.05 && destroyed == false) {
-            Invoke("DestroyFlare", 2);
-            destroyed = true;
-        }
-    }
-
-    private void DestroyFlare()
-    {
-        Destroy(_flare);
+    private void DestroyFlare() {
+        Destroy(gameObject);
         _cameraControls.MoveCameraSurface();
         _beanMovement.EnableInputs();
     }
 
     private void Awake() {
+        // Object created here
+        if (_instance == null) {
+            _instance = this;
+        }
+        else {
+            Destroy(gameObject);
+            return;
+        }
+
         _cameraControls = FindObjectOfType<CameraControls>();
         _beanMovement = FindObjectOfType<BeanMovement>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("FlareDestruct"))
-        {
-            Destroy(_flare);
-            _beanMovement.EnableInputs();
-        }
+    private void Start() {
+        _rb = GetComponent<Rigidbody2D>();
+        _torqueValue = (_beanMovement.isFlipped) ? -0.5f : 0.5f;
+        _rb.AddTorque(_torqueValue, ForceMode2D.Impulse);
+    }
+
+    private void Update() {
+        if (!(_rb.velocity.magnitude < .05f) || _destroyed)
+            return;
+
+        Invoke(nameof(DestroyFlare), 2f);
+        _destroyed = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (!other.gameObject.CompareTag("FlareDestruct"))
+            return;
+
+        Destroy(gameObject);
+        _beanMovement.EnableInputs();
     }
 }

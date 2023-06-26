@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Launcher : MonoBehaviour
 {
@@ -20,66 +19,53 @@ public class Launcher : MonoBehaviour
 
     [SerializeField]
     private int trajectoryStepCount = 15;
-   
+
     [SerializeField]
     private float gravityFactor = 0.9f;
 
     private GameObject _flare;
-
-    private bool _mcFacingRight = true;
-
     private Vector2 _velocity, _startMousePos, _currentMousePos;
-
-    private bool startThrowing;
-    private bool throwing;
+    private bool _startThrowing;
+    private bool _throwing;
+    
+    private static readonly int MaterialColor = Shader.PropertyToID("_Color");
 
     private void Start() {
-        lineRenderer.material.SetColor("_Color", Color.yellow);
+        lineRenderer.material.SetColor(MaterialColor, Color.yellow);
     }
 
     private void Update() {
         _flare = GameObject.FindGameObjectWithTag("Flare");
 
-        if (startThrowing == true)
-        {
-
-            if (Input.GetMouseButtonDown(1) && _flare == null)
-            {
+        if (_startThrowing) {
+            if (Input.GetMouseButtonDown(0) && _flare == null) {
                 _startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
 
-            if (Input.GetMouseButton(1) && _flare == null)
-            {
+            if (Input.GetMouseButton(0) && _flare == null) {
                 _currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 _velocity = (_startMousePos - _currentMousePos) * launchForce;
 
                 DrawTrajectory();
                 RotateLauncher();
             }
-
         }
 
-        if (throwing == true)
-        {
-            if (Input.GetMouseButtonUp(1) && _flare == null)
-            {
-                FireProjectile();
-                ClearTrajectory();
-                throwing = false;
-            }
-        }
+        if (!_throwing || _flare != null)
+            return;
+        
+        FireProjectile();
+        ClearTrajectory();
+        _throwing = false;
     }
 
-    public void SetStartThrowing()
-    {
-        startThrowing = true;
+    public void SetStartThrowing() {
+        _startThrowing = true;
     }
 
-    public void SetThrowing()
-    {
-        startThrowing = false;
-        throwing = true;
-
+    public void SetThrowing() {
+        _startThrowing = false;
+        _throwing = true;
     }
 
     private void DrawTrajectory() {
@@ -97,18 +83,12 @@ public class Launcher : MonoBehaviour
 
     private void FireProjectile() {
         var pr = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
-
-
         pr.GetComponent<Rigidbody2D>().velocity = _velocity;
     }
 
     private void RotateLauncher() {
         var angle = Mathf.Atan2(_velocity.y, _velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-    }
-
-    private void Flip() {
-        _mcFacingRight = !_mcFacingRight;
     }
 
     private void ClearTrajectory() {

@@ -11,16 +11,19 @@ public class PauseMenu : MonoBehaviour
 
     private InputManager _inputManager;
     private bool _isPaused;
+    private int _currentBuildSceneIndex;
+
+    private const string SelectButtonSound = "SelectButton";
 
     private void Awake() {
         _audioManager = FindObjectOfType<AudioManager>();
         _inputManager = new InputManager();
+        _currentBuildSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         _inputManager.UI.Cancel.performed += _ => ManagePause();
     }
 
     private void Start() {
-
         if (!levelData.showTutorial)
             return;
 
@@ -43,28 +46,28 @@ public class PauseMenu : MonoBehaviour
     }
 
     private void PauseGame() {
-        _audioManager.Play("Menu");  
+        _audioManager.Play(SelectButtonSound);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         _isPaused = true;
     }
 
     public void ResumeGame() {
-        _audioManager.Play("Menu");  
+        _audioManager.Play(SelectButtonSound);
         Time.timeScale = 1f;
         _isPaused = false;
         pauseMenuUI.SetActive(false);
     }
 
     public void LoadMainMenu() {
-        _audioManager.Play("Menu");    
-        _audioManager.Stop("Level1");
+        _audioManager.Play(SelectButtonSound);
+        _audioManager.Stop("Level" + _currentBuildSceneIndex);
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
 
     public void ShowCommands() {
-        _audioManager.Play("Menu");  
+        _audioManager.Play(SelectButtonSound);
         Time.timeScale = 0f;
         _isPaused = true;
 
@@ -73,14 +76,13 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void HideCommands() {
-        _audioManager.Play("Menu");  
+        _audioManager.Play(SelectButtonSound);
         pauseMenuUI.SetActive(true);
         commandsUI.SetActive(false);
     }
 
     private void ShowTutorial() {
         Time.timeScale = 0f;
-
         tutorialUI.SetActive(true);
     }
 

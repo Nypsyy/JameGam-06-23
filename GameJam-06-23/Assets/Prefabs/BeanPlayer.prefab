@@ -344,6 +344,7 @@ MonoBehaviour:
   horizontalAcceleration: 1
   maxFallSpeed: 25
   drag: 0.15
+  levelData: {fileID: 11400000, guid: f7829106e2a4bf942923992c143c3592, type: 2}
   onLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -503,7 +504,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _isFlipped: 0
+  isFlipped: 0
 --- !u!1 &4303996061232136150
 GameObject:
   m_ObjectHideFlags: 0

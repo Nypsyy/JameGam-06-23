@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 public class BeanMovement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class BeanMovement : MonoBehaviour
     public float horizontalAcceleration = 2f;
     public float maxFallSpeed = 25f;
     public float drag = 10f;
+    public LevelData levelData;
 
     public UnityEvent onLandEvent;
     public UnityEvent onFallEvent;
@@ -24,7 +26,7 @@ public class BeanMovement : MonoBehaviour
     private bool _isJumping;
     private bool _isThrowing;
     private bool _isGrounded;
-    public bool _isFlipped;
+    public bool isFlipped;
 
     public void OnJump() {
         _isGrounded = false;
@@ -71,10 +73,10 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void TryFlipSprite() {
-        if ((!_isFlipped || _moveVector.x <= 0) && (_isFlipped || _moveVector.x >= 0))
+        if ((!isFlipped || _moveVector.x <= 0) && (isFlipped || _moveVector.x >= 0))
             return;
 
-        _isFlipped = !_isFlipped;
+        isFlipped = !isFlipped;
 
         var selfTransform = transform;
         var currentScale = selfTransform.localScale;
@@ -83,7 +85,7 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void TryThrow() {
-        if (_isGrounded && GameObject.FindGameObjectWithTag("Flare") == null) {
+        if (_isGrounded && GameObject.FindGameObjectWithTag("Flare") == null && !levelData.showTutorial) {
             onThrowEvent.Invoke();
         }
     }

@@ -1,50 +1,60 @@
-using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public Animator animator;
     public GameObject mainUI;
     public GameObject optionsUI;
-    private int completed;
+    public GameObject levelsUI;
     public GameObject[] levelButtons;
 
     private AudioManager _audioManager;
     private InputManager _inputManager;
+    private int _completed;
     private readonly WaitForSeconds _wait = new(1.45f);
+
     private static readonly int IsPlay = Animator.StringToHash("IsPlay");
+    private const string CompletedPref = "Completed";
+    private const string SelectButtonSound = "SelectButton";
+    private const string MainMenuMusic = "MainMenu";
 
     public void OpenOptions() {
-        if (optionsUI.activeSelf)
+        if (optionsUI == null || optionsUI.activeSelf)
             return;
 
         optionsUI.SetActive(true);
         mainUI.SetActive(false);
     }
 
-    public void CloseOptions() {
-        if (!optionsUI.activeSelf)
+    public void OpenLevels() {
+        if (levelsUI == null || levelsUI.activeSelf)
             return;
 
-        mainUI.SetActive(true);
-        optionsUI.SetActive(false);
+        levelsUI.SetActive(true);
+        mainUI.SetActive(false);
     }
 
-    public void ShowLevelButtons()
-    {
-        for (int i = 0; i < completed; i++)
-        {
-            levelButtons[i].SetActive(true);
+    public void CloseSubMenu() {
+        if (optionsUI != null && optionsUI.activeSelf) {
+            mainUI.SetActive(true);
+            optionsUI.SetActive(false);
+        }
+        else if (levelsUI != null && levelsUI.activeSelf) {
+            mainUI.SetActive(true);
+            levelsUI.SetActive(false);
+        }
+    }
+
+    public void ShowLevelButtons() {
+        for (var index = 0; index <= _completed; index++) {
+            levelButtons[index].SetActive(true);
         }
     }
 
     public void QuitGame() {
-        _audioManager.Play("Menu");
+        _audioManager.Play(SelectButtonSound);
         Application.Quit();
     }
 
@@ -52,60 +62,27 @@ public class MainMenu : MonoBehaviour
         _audioManager = FindObjectOfType<AudioManager>();
         _inputManager = new InputManager();
 
-        _inputManager.UI.Cancel.performed += _ => CloseOptions();
+        _inputManager.UI.Cancel.performed += _ => CloseSubMenu();
     }
 
     private void Start() {
-        completed = PlayerPrefs.GetInt("Completed", 1);
-        _audioManager.Play("Level0");
+        _completed = PlayerPrefs.GetInt(CompletedPref, 1);
+        _audioManager.Play(MainMenuMusic);
     }
 
-    public void LoadGame() {
-        _audioManager.Play("Menu");
-        _audioManager.Stop("MusicMenu");
-        StartCoroutine(LoadNextScene());
-        // animator.Play("throw");
+    public void LoadScene(string sceneName) {
+        _audioManager.Stop(MainMenuMusic);
+        _audioManager.Play(SelectButtonSound);
 
+        StartCoroutine(LoadIndexedScene(sceneName));
     }
 
-    public void LoadMap2() {
-        _audioManager.Play("Menu");
-        _audioManager.Stop("MusicMenu");
-        StartCoroutine(Map2());
-        // animator.Play("throw");
-
-    }
-
-    public void LoadMap3() {
-        _audioManager.Play("Menu");
-        _audioManager.Stop("MusicMenu");
-        StartCoroutine(Map3());
-        // animator.Play("throw");
-
-    }
-
-
-    private IEnumerator LoadNextScene() {
+    private IEnumerator LoadIndexedScene(string sceneName) {
         animator.SetBool(IsPlay, true);
         yield return _wait;
-        _audioManager.Play("Level1");
-        SceneManager.LoadScene("Map 1");
+        _audioManager.Play(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
-
-    private IEnumerator Map2() {
-        animator.SetBool(IsPlay, true);
-        yield return _wait;
-        _audioManager.Play("Level2");
-        SceneManager.LoadScene("Map 2");
-    }
-
-    private IEnumerator Map3() {
-        animator.SetBool(IsPlay, true);
-        yield return _wait;
-        _audioManager.Play("Level3");
-        SceneManager.LoadScene("Map3");
-    }
-    
 
     private void OnEnable() {
         _inputManager.Enable();
@@ -113,15 +90,5 @@ public class MainMenu : MonoBehaviour
 
     private void OnDisable() {
         _inputManager.Disable();
-    }
-
-    public void waitBackgroundAnim()
-    {
-        
-        // animator.SetBool(IsPlay, true);
-        // animator.SetBool("IsPlay", true);
-        // _audioManager.Play("Level1");
-        // SceneManager.LoadScene("Map 1");
-        // animator.SetBool("IsPlay", true);
     }
 }

@@ -6,33 +6,32 @@ public class CameraControls : MonoBehaviour
     public GameObject cameraSurface;
     public GameObject cameraFlare;
     public GameObject cameraMC;
-    public GameObject newFlare;
+    public GameObject winPointCamera;
+    
+    private GameObject _newFlare;
     private CinemachineVirtualCamera _cvcFlare;
     private Transform _target;
-    public GameObject _winPointCamera;
-
 
     public void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Player")) {
             MoveCameraMC();
         }
-
-        if (col.CompareTag("Flare")) {
-            newFlare = col.gameObject;
+        else if (col.CompareTag("Flare")) {
+            _newFlare = col.gameObject;
             MoveCameraFlare();
         }
     }
 
-    public void MoveCameraFlare() {
+    private void MoveCameraFlare() {
         cameraSurface.SetActive(false);
         cameraMC.SetActive(false);
         _cvcFlare = cameraFlare.GetComponent<CinemachineVirtualCamera>();
-        _target = newFlare.transform;
+        _target = _newFlare.transform;
         _cvcFlare.Follow = _target;
         cameraFlare.SetActive(true);
     }
 
-    public void MoveCameraMC() {
+    private void MoveCameraMC() {
         cameraSurface.SetActive(false);
         cameraFlare.SetActive(false);
         cameraMC.SetActive(true);
@@ -44,9 +43,8 @@ public class CameraControls : MonoBehaviour
         cameraMC.SetActive(false);
     }
 
-    public void winCamera()
-    {
+    public void ToggleWinCamera() {
         var vcam = cameraMC.GetComponent<CinemachineVirtualCamera>();
-        vcam.Follow = _winPointCamera.transform;
+        vcam.Follow = winPointCamera.transform;
     }
 }

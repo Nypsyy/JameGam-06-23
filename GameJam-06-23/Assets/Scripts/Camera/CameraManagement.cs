@@ -11,12 +11,6 @@ public class CameraManagement : MonoBehaviour
     private Vector3 _cameraPos;
     private Vector3 _velocity = Vector3.zero;
 
-    public void startCamera() {
-    }
-
-    public void FlareCamera() {
-    }
-
     public void MCCamera() {
         var position = player.position;
         _cameraPos = new Vector3(position.x, position.y, position.z);

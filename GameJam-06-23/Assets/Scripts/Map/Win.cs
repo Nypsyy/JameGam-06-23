@@ -6,6 +6,8 @@ public class Win : MonoBehaviour
 {
     public UnityEvent onWinEvent;
 
+    private const string CompletedPref = "Complete";
+
     private void Awake() {
         onWinEvent ??= new UnityEvent();
     }
@@ -16,12 +18,11 @@ public class Win : MonoBehaviour
         }
     }
 
-    public void UpdateCompletedLevels()
-    {
-        if (PlayerPrefs.GetInt("Completed", 1) < SceneManager.GetActiveScene().buildIndex + 1)
-        {
-            PlayerPrefs.SetInt("Completed", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.Save();
-        }
+    public void UpdateCompletedLevels() {
+        if (PlayerPrefs.GetInt(CompletedPref, 1) >= SceneManager.GetActiveScene().buildIndex + 1)
+            return;
+
+        PlayerPrefs.SetInt(CompletedPref, SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerPrefs.Save();
     }
 }

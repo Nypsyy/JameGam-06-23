@@ -1,16 +1,27 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Tutorial : MonoBehaviour
 {
-    private void Update() {
-        if (Input.anyKey) {
-            HideTutorial();
-        }
+    public BeanMovement beanMovement;
+    public UnityEvent onCloseTutorialEvent;
+
+    public void HideTutorial() {
+        Time.timeScale = 1f;
+        gameObject.SetActive(false);
     }
 
-    private void HideTutorial() {
-        Time.timeScale = 1f;
+    private void Awake() {
+        onCloseTutorialEvent ??= new UnityEvent();
+    }
 
-        gameObject.SetActive(false);
+    private void OnEnable() {
+        beanMovement.DisableInputs();
+    }
+
+    private void Update() {
+        if (Input.anyKey) {
+            onCloseTutorialEvent.Invoke();
+        }
     }
 }
