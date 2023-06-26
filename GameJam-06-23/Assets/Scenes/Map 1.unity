@@ -17399,6 +17399,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268135297856877560, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: beanMovement
+      value: 
+      objectReference: {fileID: 2062503825}
     - target: {fileID: 5816191591909037204, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_Color.a
       value: 0

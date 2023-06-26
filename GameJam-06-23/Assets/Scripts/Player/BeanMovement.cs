@@ -1,8 +1,6 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.Serialization;
 
 public class BeanMovement : MonoBehaviour
 {
@@ -11,6 +9,7 @@ public class BeanMovement : MonoBehaviour
     public float horizontalAcceleration = 2f;
     public float maxFallSpeed = 25f;
     public float drag = 10f;
+    public bool isPaused;
 
     [HideInInspector]
     public bool isFlipped;
@@ -87,7 +86,7 @@ public class BeanMovement : MonoBehaviour
     }
 
     private void TryThrow() {
-        if (_isGrounded && GameObject.FindGameObjectWithTag("Flare") == null && !levelData.showTutorial) {
+        if (_isGrounded && GameObject.FindGameObjectWithTag("Flare") == null && !levelData.showTutorial && !isPaused) {
             onThrowEvent.Invoke();
         }
     }

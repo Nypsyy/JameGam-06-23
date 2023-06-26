@@ -3,24 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    private AudioManager _audioManager;
     public GameObject pauseMenuUI;
     public GameObject commandsUI;
     public GameObject commandsUI2;
     public GameObject commandsUI3;
     public GameObject tutorialUI;
+    public BeanMovement beanMovement;
     public LevelData levelData;
 
     private InputManager _inputManager;
+    private AudioManager _audioManager;
     private bool _isPaused;
-    private int _currentBuildSceneIndex;
 
     private const string SelectButtonSound = "SelectButton";
 
     private void Awake() {
         _audioManager = FindObjectOfType<AudioManager>();
         _inputManager = new InputManager();
-        _currentBuildSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         _inputManager.UI.Cancel.performed += _ => ManagePause();
     }
@@ -38,10 +37,9 @@ public class PauseMenu : MonoBehaviour
             if (pauseMenuUI.activeSelf) {
                 ResumeGame();
             }
-            else if (commandsUI.activeSelf|| commandsUI2.activeSelf||commandsUI3) {
+            else if (commandsUI.activeSelf || commandsUI2.activeSelf || commandsUI3) {
                 HideCommands();
             }
-
         }
         else {
             PauseGame();
@@ -50,6 +48,7 @@ public class PauseMenu : MonoBehaviour
 
     private void PauseGame() {
         _audioManager.Play(SelectButtonSound);
+        beanMovement.isPaused = true;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         _isPaused = true;
@@ -57,6 +56,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame() {
         _audioManager.Play(SelectButtonSound);
+        beanMovement.isPaused = false;
         Time.timeScale = 1f;
         _isPaused = false;
         pauseMenuUI.SetActive(false);
@@ -64,7 +64,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMainMenu() {
         _audioManager.Play(SelectButtonSound);
-        _audioManager.Stop("Level" + _currentBuildSceneIndex);
+        _audioManager.Stop(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
@@ -84,7 +84,6 @@ public class PauseMenu : MonoBehaviour
         commandsUI.SetActive(false);
         commandsUI2.SetActive(false);
         commandsUI3.SetActive(false);
-        
     }
 
     private void ShowTutorial() {
@@ -100,9 +99,7 @@ public class PauseMenu : MonoBehaviour
         _inputManager.Disable();
     }
 
-    public void DisableInput()
-    {
+    public void DisableInput() {
         _inputManager.Disable();
     }
-    
 }

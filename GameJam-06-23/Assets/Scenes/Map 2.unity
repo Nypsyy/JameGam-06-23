@@ -2646,6 +2646,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268135297856877560, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
+      propertyPath: beanMovement
+      value: 
+      objectReference: {fileID: 1427202385}
     - target: {fileID: 5867969142277976294, guid: dd97969cb9ec3a649b7956e744048f50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

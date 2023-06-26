@@ -360,6 +360,7 @@ MonoBehaviour:
   commandsUI2: {fileID: 1915004970430725383}
   commandsUI3: {fileID: 7098391684354590547}
   tutorialUI: {fileID: 2944527758293228243}
+  beanMovement: {fileID: 6389310166782642182, guid: 58573c3bb38a0cb4a8fc44e1c66070fd, type: 3}
   levelData: {fileID: 11400000, guid: f7829106e2a4bf942923992c143c3592, type: 2}
 --- !u!114 &5007889827599570874
 MonoBehaviour:
